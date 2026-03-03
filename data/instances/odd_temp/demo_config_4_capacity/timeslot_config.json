@@ -1,0 +1,33 @@
+{
+  "years": [
+    3,
+    4
+  ],
+  "semesters": [
+    1,
+    2
+  ],
+  "weeks": {
+    "per_semester": 11,
+    "start_index": 1
+  },
+  "days": {
+    "active_days": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "time": {
+    "start": "09:00",
+    "end": "18:00",
+    "slot_minutes": 60
+  },
+  "week_patterns": [
+    "every_week",
+    "odd_weeks",
+    "even_weeks"
+  ]
+}

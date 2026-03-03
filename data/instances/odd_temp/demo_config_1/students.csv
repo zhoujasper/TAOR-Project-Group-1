@@ -1,0 +1,7 @@
+id,programme,year,compulsory_course_ids,desired_course_ids,banned_course_ids,number_students
+type_0,single,3,,,,150
+type_1,joint_cs,3,,,,10
+type_2,joint_phys,3,,,,10
+type_3,joint_econ,3,,,,10
+type_4,joint_bus,3,,,,10
+type_5,joint_phil,3,,,,10

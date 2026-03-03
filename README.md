@@ -8,7 +8,8 @@ For Assignment 2 (mid-project), the deliverable is the **working baseline code p
 
 1. load and validate one instance,
 2. build and solve the optimisation model,
-3. write a full output pack for analysis.
+3. write a full output pack for analysis. (Output CSV files)
+4. Visualisation and completed `demo_baseline` results will be included in the final deliverable (Timetable visualisation). (Visualisation Files)
 
 The intended assessment scope for this deliverable is:
 

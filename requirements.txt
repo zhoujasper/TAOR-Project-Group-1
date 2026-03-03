@@ -1,2 +1,3 @@
 ortools>=9.15,<10.0
 psutil>=5.9,<7.0
+matplotlib>=3.5,<4.0

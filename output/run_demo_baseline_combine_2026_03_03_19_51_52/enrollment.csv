@@ -1,0 +1,177 @@
+course_id,course_name,course_kind,credits,year,semester,programme,students_enrolled
+MATH10001,Gateway 1,gateway,20,3,1,ALL,150
+MATH10001,Gateway 1,gateway,20,3,1,single,150
+MATH10001,Gateway 1,gateway,20,4,1,ALL,40
+MATH10001,Gateway 1,gateway,20,4,1,joint_cs,10
+MATH10001,Gateway 1,gateway,20,4,1,joint_econ,10
+MATH10001,Gateway 1,gateway,20,4,1,joint_phil,10
+MATH10001,Gateway 1,gateway,20,4,1,joint_phys,10
+MATH10002,Gateway 2,gateway,20,3,1,ALL,160
+MATH10002,Gateway 2,gateway,20,3,1,joint_bus,10
+MATH10002,Gateway 2,gateway,20,3,1,single,150
+MATH10002,Gateway 2,gateway,20,4,1,ALL,0
+MATH10003,Gateway 3,gateway,20,3,2,ALL,170
+MATH10003,Gateway 3,gateway,20,3,2,joint_bus,10
+MATH10003,Gateway 3,gateway,20,3,2,joint_phys,10
+MATH10003,Gateway 3,gateway,20,3,2,single,150
+MATH10003,Gateway 3,gateway,20,4,2,ALL,10
+MATH10003,Gateway 3,gateway,20,4,2,joint_phil,10
+MATH10004,Gateway 4,gateway,20,3,2,ALL,0
+MATH10004,Gateway 4,gateway,20,4,2,ALL,180
+MATH10004,Gateway 4,gateway,20,4,2,joint_cs,10
+MATH10004,Gateway 4,gateway,20,4,2,joint_econ,10
+MATH10004,Gateway 4,gateway,20,4,2,joint_phys,10
+MATH10004,Gateway 4,gateway,20,4,2,single,150
+MATH10005,Gateway 5,gateway,20,3,1,ALL,40
+MATH10005,Gateway 5,gateway,20,3,1,joint_cs,10
+MATH10005,Gateway 5,gateway,20,3,1,joint_econ,10
+MATH10005,Gateway 5,gateway,20,3,1,joint_phil,10
+MATH10005,Gateway 5,gateway,20,3,1,joint_phys,10
+MATH10005,Gateway 5,gateway,20,4,1,ALL,160
+MATH10005,Gateway 5,gateway,20,4,1,joint_bus,10
+MATH10005,Gateway 5,gateway,20,4,1,single,150
+MATH10006,Gateway 6,gateway,20,3,2,ALL,10
+MATH10006,Gateway 6,gateway,20,3,2,joint_phil,10
+MATH10006,Gateway 6,gateway,20,4,2,ALL,160
+MATH10006,Gateway 6,gateway,20,4,2,joint_bus,10
+MATH10006,Gateway 6,gateway,20,4,2,single,150
+MATH10007,Gateway 7,gateway,20,3,2,ALL,170
+MATH10007,Gateway 7,gateway,20,3,2,joint_cs,10
+MATH10007,Gateway 7,gateway,20,3,2,joint_econ,10
+MATH10007,Gateway 7,gateway,20,3,2,single,150
+MATH10007,Gateway 7,gateway,20,4,2,ALL,0
+MATH10008,Gateway 8,gateway,20,3,1,ALL,0
+MATH10008,Gateway 8,gateway,20,4,1,ALL,150
+MATH10008,Gateway 8,gateway,20,4,1,single,150
+MATH20001,Optional 1,optional,20,3,1,ALL,150
+MATH20001,Optional 1,optional,20,3,1,single,150
+MATH20001,Optional 1,optional,20,4,1,ALL,0
+MATH20002,Optional 2,optional,20,3,1,ALL,0
+MATH20002,Optional 2,optional,20,4,1,ALL,150
+MATH20002,Optional 2,optional,20,4,1,single,150
+MATH20003,Optional 3,optional,20,3,2,ALL,0
+MATH20003,Optional 3,optional,20,4,2,ALL,150
+MATH20003,Optional 3,optional,20,4,2,single,150
+MATH20004,Optional 4,optional,20,3,2,ALL,150
+MATH20004,Optional 4,optional,20,3,2,single,150
+MATH20004,Optional 4,optional,20,4,2,ALL,0
+CS30001,Computer Science 1,outside,20,3,1,ALL,10
+CS30001,Computer Science 1,outside,20,3,1,joint_cs,10
+CS30001,Computer Science 1,outside,20,4,1,ALL,0
+CS30002,Computer Science 2,outside,20,3,1,ALL,10
+CS30002,Computer Science 2,outside,20,3,1,joint_cs,10
+CS30002,Computer Science 2,outside,20,4,1,ALL,0
+CS30003,Computer Science 3,outside,20,3,2,ALL,0
+CS30003,Computer Science 3,outside,20,4,2,ALL,10
+CS30003,Computer Science 3,outside,20,4,2,joint_cs,10
+CS30004,Computer Science 4,outside,20,3,2,ALL,0
+CS30004,Computer Science 4,outside,20,4,2,ALL,10
+CS30004,Computer Science 4,outside,20,4,2,joint_cs,10
+CS30005,Computer Science 5,outside,20,3,1,ALL,0
+CS30005,Computer Science 5,outside,20,4,1,ALL,10
+CS30005,Computer Science 5,outside,20,4,1,joint_cs,10
+CS30006,Computer Science 6,outside,20,3,1,ALL,0
+CS30006,Computer Science 6,outside,20,4,1,ALL,10
+CS30006,Computer Science 6,outside,20,4,1,joint_cs,10
+CS30007,Computer Science 7,outside,20,3,2,ALL,10
+CS30007,Computer Science 7,outside,20,3,2,joint_cs,10
+CS30007,Computer Science 7,outside,20,4,2,ALL,0
+CS30008,Computer Science 8,outside,20,3,2,ALL,10
+CS30008,Computer Science 8,outside,20,3,2,joint_cs,10
+CS30008,Computer Science 8,outside,20,4,2,ALL,0
+PHYS30001,Physics 1,outside,20,3,1,ALL,10
+PHYS30001,Physics 1,outside,20,3,1,joint_phys,10
+PHYS30001,Physics 1,outside,20,4,1,ALL,0
+PHYS30002,Physics 2,outside,20,3,1,ALL,10
+PHYS30002,Physics 2,outside,20,3,1,joint_phys,10
+PHYS30002,Physics 2,outside,20,4,1,ALL,0
+PHYS30003,Physics 3,outside,20,3,2,ALL,0
+PHYS30003,Physics 3,outside,20,4,2,ALL,10
+PHYS30003,Physics 3,outside,20,4,2,joint_phys,10
+PHYS30004,Physics 4,outside,20,3,2,ALL,0
+PHYS30004,Physics 4,outside,20,4,2,ALL,10
+PHYS30004,Physics 4,outside,20,4,2,joint_phys,10
+PHYS30005,Physics 5,outside,20,3,1,ALL,0
+PHYS30005,Physics 5,outside,20,4,1,ALL,10
+PHYS30005,Physics 5,outside,20,4,1,joint_phys,10
+PHYS30006,Physics 6,outside,20,3,1,ALL,0
+PHYS30006,Physics 6,outside,20,4,1,ALL,10
+PHYS30006,Physics 6,outside,20,4,1,joint_phys,10
+PHYS30007,Physics 7,outside,20,3,2,ALL,10
+PHYS30007,Physics 7,outside,20,3,2,joint_phys,10
+PHYS30007,Physics 7,outside,20,4,2,ALL,0
+PHYS30008,Physics 8,outside,20,3,2,ALL,10
+PHYS30008,Physics 8,outside,20,3,2,joint_phys,10
+PHYS30008,Physics 8,outside,20,4,2,ALL,0
+ECON30001,Economics 1,outside,20,3,1,ALL,10
+ECON30001,Economics 1,outside,20,3,1,joint_econ,10
+ECON30001,Economics 1,outside,20,4,1,ALL,0
+ECON30002,Economics 2,outside,20,3,1,ALL,10
+ECON30002,Economics 2,outside,20,3,1,joint_econ,10
+ECON30002,Economics 2,outside,20,4,1,ALL,0
+ECON30003,Economics 3,outside,20,3,2,ALL,0
+ECON30003,Economics 3,outside,20,4,2,ALL,10
+ECON30003,Economics 3,outside,20,4,2,joint_econ,10
+ECON30004,Economics 4,outside,20,3,2,ALL,0
+ECON30004,Economics 4,outside,20,4,2,ALL,10
+ECON30004,Economics 4,outside,20,4,2,joint_econ,10
+ECON30005,Economics 5,outside,20,3,1,ALL,0
+ECON30005,Economics 5,outside,20,4,1,ALL,10
+ECON30005,Economics 5,outside,20,4,1,joint_econ,10
+ECON30006,Economics 6,outside,20,3,1,ALL,0
+ECON30006,Economics 6,outside,20,4,1,ALL,10
+ECON30006,Economics 6,outside,20,4,1,joint_econ,10
+ECON30007,Economics 7,outside,20,3,2,ALL,10
+ECON30007,Economics 7,outside,20,3,2,joint_econ,10
+ECON30007,Economics 7,outside,20,4,2,ALL,0
+ECON30008,Economics 8,outside,20,3,2,ALL,10
+ECON30008,Economics 8,outside,20,3,2,joint_econ,10
+ECON30008,Economics 8,outside,20,4,2,ALL,0
+BUS30001,Business 1,outside,20,3,1,ALL,10
+BUS30001,Business 1,outside,20,3,1,joint_bus,10
+BUS30001,Business 1,outside,20,4,1,ALL,0
+BUS30002,Business 2,outside,20,3,1,ALL,10
+BUS30002,Business 2,outside,20,3,1,joint_bus,10
+BUS30002,Business 2,outside,20,4,1,ALL,0
+BUS30003,Business 3,outside,20,3,2,ALL,0
+BUS30003,Business 3,outside,20,4,2,ALL,10
+BUS30003,Business 3,outside,20,4,2,joint_bus,10
+BUS30004,Business 4,outside,20,3,2,ALL,10
+BUS30004,Business 4,outside,20,3,2,joint_bus,10
+BUS30004,Business 4,outside,20,4,2,ALL,0
+BUS30005,Business 5,outside,20,3,1,ALL,0
+BUS30005,Business 5,outside,20,4,1,ALL,10
+BUS30005,Business 5,outside,20,4,1,joint_bus,10
+BUS30006,Business 6,outside,20,3,1,ALL,0
+BUS30006,Business 6,outside,20,4,1,ALL,10
+BUS30006,Business 6,outside,20,4,1,joint_bus,10
+BUS30007,Business 7,outside,20,3,2,ALL,0
+BUS30007,Business 7,outside,20,4,2,ALL,10
+BUS30007,Business 7,outside,20,4,2,joint_bus,10
+BUS30008,Business 8,outside,20,3,2,ALL,10
+BUS30008,Business 8,outside,20,3,2,joint_bus,10
+BUS30008,Business 8,outside,20,4,2,ALL,0
+PHIL30001,Philosophy 1,outside,20,3,1,ALL,10
+PHIL30001,Philosophy 1,outside,20,3,1,joint_phil,10
+PHIL30001,Philosophy 1,outside,20,4,1,ALL,0
+PHIL30002,Philosophy 2,outside,20,3,1,ALL,10
+PHIL30002,Philosophy 2,outside,20,3,1,joint_phil,10
+PHIL30002,Philosophy 2,outside,20,4,1,ALL,0
+PHIL30003,Philosophy 3,outside,20,3,2,ALL,0
+PHIL30003,Philosophy 3,outside,20,4,2,ALL,10
+PHIL30003,Philosophy 3,outside,20,4,2,joint_phil,10
+PHIL30004,Philosophy 4,outside,20,3,2,ALL,10
+PHIL30004,Philosophy 4,outside,20,3,2,joint_phil,10
+PHIL30004,Philosophy 4,outside,20,4,2,ALL,0
+PHIL30005,Philosophy 5,outside,20,3,1,ALL,0
+PHIL30005,Philosophy 5,outside,20,4,1,ALL,10
+PHIL30005,Philosophy 5,outside,20,4,1,joint_phil,10
+PHIL30006,Philosophy 6,outside,20,3,1,ALL,0
+PHIL30006,Philosophy 6,outside,20,4,1,ALL,10
+PHIL30006,Philosophy 6,outside,20,4,1,joint_phil,10
+PHIL30007,Philosophy 7,outside,20,3,2,ALL,0
+PHIL30007,Philosophy 7,outside,20,4,2,ALL,10
+PHIL30007,Philosophy 7,outside,20,4,2,joint_phil,10
+PHIL30008,Philosophy 8,outside,20,3,2,ALL,10
+PHIL30008,Philosophy 8,outside,20,3,2,joint_phil,10
+PHIL30008,Philosophy 8,outside,20,4,2,ALL,0

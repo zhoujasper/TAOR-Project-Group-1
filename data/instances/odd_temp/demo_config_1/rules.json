@@ -1,0 +1,188 @@
+{
+    "single": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 8,
+        "gateway_max_per_year": 6,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 4,
+        "optional_min_per_year": 2,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 0,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    },
+    "joint_cs": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 4,
+        "gateway_max_per_year": 4,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 2,
+        "optional_min_per_year": 1,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 40,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    },
+    "joint_phys": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 4,
+        "gateway_max_per_year": 4,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 2,
+        "optional_min_per_year": 1,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 40,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    },
+    "joint_econ": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 4,
+        "gateway_max_per_year": 4,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 2,
+        "optional_min_per_year": 1,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 40,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    },
+    "joint_bus": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 4,
+        "gateway_max_per_year": 4,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 2,
+        "optional_min_per_year": 1,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 40,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    },
+    "joint_phil": {
+        "horizon_years": [
+            3,
+            4
+        ],
+        "semesters": [
+            1,
+            2
+        ],
+        "gateway_total_required": 4,
+        "gateway_max_per_year": 4,
+        "gateway_min_per_year": 2,
+        "gateway_max_per_semester": 999,
+        "gateway_min_per_semester": 1,
+        "optional_max_per_year": 2,
+        "optional_min_per_year": 1,
+        "optional_max_per_semester": 999,
+        "optional_min_per_semester": 0,
+        "courses_max_per_year": 999,
+        "courses_min_per_year": 0,
+        "courses_max_per_semester": 999,
+        "courses_min_per_semester": 0,
+        "total_credits_per_year": 120,
+        "credits_max_per_semester": 999,
+        "credits_min_per_semester": 0,
+        "outside_credits_required_per_year": 40,
+        "balanced_credits": true,
+        "allowed_gateway_ids": null,
+        "allowed_optional_ids": null,
+        "banned_course_ids": []
+    }
+}

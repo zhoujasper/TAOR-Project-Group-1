@@ -1,0 +1,48 @@
+[HEADER]
+solver_version: 9.15.6755
+
+[MODEL_SIZE_INITIAL]
+initial_vars_total: 979033
+initial_bools: (not parsed)
+initial_ints: (not parsed)
+initial_primary_vars: 977985
+kAtMostOne: 503
+kBoolAnd: 1933760
+kBoolOr: 1861364
+kExactlyOne: 5220
+kLinear1: 3080
+kLinear2: 63708
+kLinear3: 45120
+kLinearN: 17580
+
+[PRESOLVE]
+presolve_start_s: 0.7
+presolved_vars_total: 971804
+variables: 979033 -> 971804 (reduced 7229)
+
+[BOUNDS_AND_GAP]
+objective_sense: min
+primal_objective: -3496.0
+dual_bound: -3496.0
+absolute_gap: 0.0
+gap_ratio: 0.0
+gap_percent: 0.0
+
+[SEARCH_STATS_FINAL]
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+wall_time_s: 465.945
+user_time_s: 465.945
+deterministic_time: 582.525
+gap_integral: 530.519
+solution_fingerprint: 0xd453c6343f604d60
+
+[TERMINATION]
+status: OPTIMAL
+
+[RAW_METRICS_DICT]
+{'solver_version': '9.15.6755', 'initial_vars_total': 979033, 'initial_bools': None, 'initial_ints': None, 'initial_primary_vars': 977985, 'initial_constraints_by_type': {'kBoolAnd': 1933760, 'kBoolOr': 1861364, 'kLinear1': 3080, 'kLinear2': 63708, 'kLinear3': 45120, 'kLinearN': 17580, 'kAtMostOne': 503, 'kExactlyOne': 5220}, 'presolved_vars_total': 971804, 'presolve_start_s': 0.7, 'objective_sense': 'min', 'primal_objective': -3496.0, 'dual_bound': -3496.0, 'gap_ratio': 0.0, 'gap_percent': 0.0, 'status': 'OPTIMAL', 'conflicts': 0, 'branches': 0, 'propagations': 0, 'integer_propagations': 0, 'restarts': 0, 'lp_iterations': 0, 'wall_time_s': 465.945, 'user_time_s': 465.945, 'deterministic_time': 582.525, 'gap_integral': 530.519, 'solution_fingerprint': '0xd453c6343f604d60', 'absolute_gap': 0.0}
