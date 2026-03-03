@@ -1,0 +1,7 @@
+{
+  "desire_bonus_weight": 10,
+  "activation_penalty": 1,
+  "lecture_lecture_conflict_penalty": 10,
+  "lecture_workshop_conflict_penalty": 3,
+  "workshop_workshop_conflict_penalty": 1
+}
