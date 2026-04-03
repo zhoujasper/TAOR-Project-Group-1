@@ -11,7 +11,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # Config
 # ==============================
 
-FILE_DIR = "run_demo_baseline_2026_03_03_19_36_03"
+FILE_DIR = "run_report_v8_2026_03_29_14_50_11"
 
 CSV_PATH = f"output/{FILE_DIR}/student_assignments.csv"
 YEARS = [3, 4]
@@ -47,6 +47,16 @@ def text_color_for_facecolor(rgba):
     r, g, b, a = rgba
     lum = 0.2126*r + 0.7152*g + 0.0722*b
     return "black" if lum > 0.6 else "white"
+
+
+def set_alpha(rgba, alpha):
+    """Return a copy of *rgba* with the alpha channel replaced."""
+    r, g, b, _ = rgba
+    return (r, g, b, alpha)
+
+
+LEC_ALPHA = 0.92
+WS_ALPHA  = 0.45
 
 
 def build_color_map(course_ids):
@@ -125,22 +135,31 @@ def draw_semester(df_sem: pd.DataFrame, year: int, semester: int, student_id: st
         rect_h = duration * (1 - 2 * pad_y)
 
         cid = r["course_id"]
-        face = course_color.get(cid, (0.5, 0.5, 0.5, 1))
+        base = course_color.get(cid, (0.5, 0.5, 0.5, 1))
 
-        hatch = "///" if r["week_pattern"] == "even_weeks" else None
+        is_ws = str(r["component_id"]).lower() in ("ws", "fws")
+        is_biweekly = str(r["week_pattern"]) in ("even_weeks", "odd_weeks")
+
+        face = set_alpha(base, WS_ALPHA if is_ws else LEC_ALPHA)
+        hatch = "\\\\\\" if is_biweekly else None
+        ls = "--" if is_ws else "-"
+        lw = 1.4 if is_ws else 0.7
+        ec = (0.2, 0.2, 0.2, 0.8) if is_ws else (0.4, 0.4, 0.4, 0.6)
 
         rect = patches.Rectangle(
             (rect_x, rect_y),
             rect_w,
             rect_h,
-            linewidth=1.2,
-            edgecolor="white",
+            linewidth=lw,
+            linestyle=ls,
+            edgecolor=ec,
             facecolor=face,
             hatch=hatch,
         )
         ax.add_patch(rect)
 
-        label = f"{cid}\n{r['component_id']} · {r['week_label']}"
+        label = f"{cid}\n{r['component_id']}\n{r['week_label']}"
+        fs = max(4.5, min(8.5, 20 * rect_w, 12 * rect_h))
 
         ax.text(
             rect_x + rect_w / 2,
@@ -148,9 +167,9 @@ def draw_semester(df_sem: pd.DataFrame, year: int, semester: int, student_id: st
             label,
             ha="center",
             va="center",
-            fontsize=8.5,
+            fontsize=fs,
             color=text_color_for_facecolor(face),
-            wrap=True,
+            clip_on=True,
         )
 
     ax.set_title(
@@ -173,8 +192,12 @@ def draw_semester(df_sem: pd.DataFrame, year: int, semester: int, student_id: st
         handles.append(patches.Patch(facecolor=course_color[cid], edgecolor="none"))
         labels.append(f"{cid} — {row['course_name']}")
 
-    handles.append(patches.Patch(facecolor="white", edgecolor="black", hatch="///"))
-    labels.append("Even weeks (hatched)")
+    handles.append(patches.Patch(facecolor=(0.4, 0.55, 0.75, LEC_ALPHA), edgecolor=(0.4, 0.4, 0.4, 0.6), linewidth=0.7))
+    labels.append("Lecture (solid border)")
+    handles.append(patches.Patch(facecolor=(0.4, 0.55, 0.75, WS_ALPHA), edgecolor=(0.2, 0.2, 0.2, 0.8), linewidth=1.4, linestyle="--"))
+    labels.append("Workshop (dashed border)")
+    handles.append(patches.Patch(facecolor="white", edgecolor=(0.4, 0.4, 0.4, 0.6), hatch="\\\\\\"))
+    labels.append("Biweekly (hatched)")
 
     ax.legend(
         handles,

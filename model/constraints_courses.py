@@ -1,7 +1,7 @@
 from collections import defaultdict
 from ortools.sat.python import cp_model
 
-from data.schema import CourseKind, WeekPattern, Instance
+from data.schema import ComponentType, CourseKind, WeekPattern, Instance
 from model.variables import VarSets
 from model.utils import is_sectioned, sum_vars, link_or
 
@@ -99,8 +99,8 @@ def add_courses_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
     opt_per_sem = inst.rules.global_optional_per_semester
 
     for sem in all_semesters:
-        gw = [sem_ind_map[(c.id, sem)] for c in inst.courses if c.kind == CourseKind.GATEWAY and (c.id, sem) in sem_ind_map]
-        opt = [sem_ind_map[(c.id, sem)] for c in inst.courses if c.kind == CourseKind.OPTIONAL and (c.id, sem) in sem_ind_map]
+        gw = [sem_ind_map[(c.id, sem)] for c in inst.courses if c.kind == CourseKind.MATH_GW and (c.id, sem) in sem_ind_map]
+        opt = [sem_ind_map[(c.id, sem)] for c in inst.courses if c.kind == CourseKind.MATH_OP and (c.id, sem) in sem_ind_map]
         if gw:
             model.add(sum(gw) == gw_per_sem)
         if opt:
@@ -208,21 +208,66 @@ def add_courses_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
 
     
     # ----------------------------------------------------------------------------------------------------------
-    # For a given course, there cannot be internal timetable conflicts between its components.
-    # (which can restrict by consider even/odd week patterns for different components in the same base slot)
+    # For a given course, there cannot be internal timetable conflicts between its lectures.
+    # Lecture slots: at most 1 per (base_id, week_pattern).
     # ----------------------------------------------------------------------------------------------------------
 
+    # Build open vars grouped by (course_id, base_id, week_pattern, is_workshop)
+    open_by_base_wp_type = defaultdict(list)
+    for (cid, compid, kid), ov in vs.open.items():
+        k = key_by_id[kid]
+        comp = comp_by_id[(cid, compid)]
+        is_ws = (comp.component_type == ComponentType.WORKSHOP)
+        open_by_base_wp_type[(cid, k.base_id, k.week_pattern, is_ws)].append(ov)
+
     for c in inst.courses:
-        bases = {base for (cid, base, _) in open_by_base_wp if cid == c.id}
+        bases = {base for (cid, base, _, _) in open_by_base_wp_type if cid == c.id}
         for base in bases:
-            s_all = sum_vars(open_by_base_wp.get((c.id, base, WeekPattern.ALL), []))
-            s_odd = sum_vars(open_by_base_wp.get((c.id, base, WeekPattern.ODD), []))
-            s_evn = sum_vars(open_by_base_wp.get((c.id, base, WeekPattern.EVEN), []))
-            model.add(s_all <= 1)
-            model.add(s_odd <= 1)
-            model.add(s_evn <= 1)
-            model.add(s_all + s_odd <= 1)
-            model.add(s_all + s_evn <= 1)
+            for wp_main in [WeekPattern.ALL, WeekPattern.ODD, WeekPattern.EVEN]:
+                lec = open_by_base_wp_type.get((c.id, base, wp_main, False), [])
+
+                # Lecture: at most 1
+                if lec:
+                    model.add(sum(lec) <= 1)
+
+            # Cross week-pattern exclusions (ALL conflicts with ODD/EVEN)
+            for wp_pair in [(WeekPattern.ALL, WeekPattern.ODD), (WeekPattern.ALL, WeekPattern.EVEN)]:
+                lec_a = open_by_base_wp_type.get((c.id, base, wp_pair[0], False), [])
+                lec_b = open_by_base_wp_type.get((c.id, base, wp_pair[1], False), [])
+
+                all_lec = lec_a + lec_b
+
+                if all_lec:
+                    model.add(sum(all_lec) <= 1)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Global room-cap hard constraint: on the same timeslot, total open course sections
+    # across all courses/components cannot exceed max_concurrent_courses_per_timeslot.
+    # ----------------------------------------------------------------------------------------------------------
+
+    max_conc_courses = inst.rules.max_concurrent_courses_per_timeslot
+    if max_conc_courses < 999:
+        open_by_base_wp = defaultdict(list)
+        for (_, _, kid), ov in vs.open.items():
+            k = key_by_id[kid]
+            open_by_base_wp[(k.base_id, k.week_pattern)].append(ov)
+
+        for _, ovs in open_by_base_wp.items():
+            if ovs:
+                model.add(sum(ovs) <= max_conc_courses)
+
+        bases = {base for (base, _) in open_by_base_wp.keys()}
+        for base in bases:
+            for wp_a, wp_b in [
+                (WeekPattern.ALL, WeekPattern.ODD),
+                (WeekPattern.ALL, WeekPattern.EVEN),
+            ]:
+                ovs_a = open_by_base_wp.get((base, wp_a), [])
+                ovs_b = open_by_base_wp.get((base, wp_b), [])
+                ovs_combined = ovs_a + ovs_b
+                if ovs_combined:
+                    model.add(sum(ovs_combined) <= max_conc_courses)
 
 
     # ----------------------------------------------------------------------------------------------------------
@@ -271,3 +316,300 @@ def add_courses_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
                                     indicators.append(ind)
 
                             model.add(sum(indicators) <= max_per_day)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Lecture max per day: on any physical day, a non-outside course can have at most
+    # lecture_max_per_day distinct lecture periods.
+    # ----------------------------------------------------------------------------------------------------------
+
+    lec_per_day = inst.rules.lecture_max_per_day
+    if lec_per_day < 999:
+        all_days_set = {k.day for k in inst.timeslot_keys_list}
+        all_periods_set = {k.period for k in inst.timeslot_keys_list}
+        physical_weeks = [
+            ("even", {WeekPattern.ALL, WeekPattern.EVEN}),
+            ("odd",  {WeekPattern.ALL, WeekPattern.ODD}),
+        ]
+
+        for c in inst.courses:
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+
+            lec_comps = [comp for comp in c.components if comp.component_type == ComponentType.LECTURE]
+            if not lec_comps:
+                continue
+
+            for y in all_years:
+                for sem in all_semesters:
+                    for d in all_days_set:
+                        for pw_label, wps in physical_weeks:
+                            period_ovs = defaultdict(list)
+                            for comp in lec_comps:
+                                for wp in wps:
+                                    for p in all_periods_set:
+                                        key_id = f"Y{y}_S{sem}_{wp.value}_D{d}_P{p}"
+                                        ov = vs.open.get((c.id, comp.id, key_id))
+                                        if ov is not None:
+                                            period_ovs[p].append(ov)
+
+                            if len(period_ovs) <= lec_per_day:
+                                continue
+
+                            indicators = []
+                            for p in period_ovs:
+                                ovs = period_ovs[p]
+                                if len(ovs) == 1:
+                                    indicators.append(ovs[0])
+                                else:
+                                    ind = model.new_bool_var(
+                                        f"lecday[{c.id},Y{y},S{sem},{pw_label},D{d},P{p}]")
+                                    link_or(model, ovs, ind)
+                                    indicators.append(ind)
+
+                            model.add(sum(indicators) <= lec_per_day)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Workshop max per day: on any physical day, a non-outside course can have at most
+    # workshop_max_per_day distinct workshop periods.
+    # ----------------------------------------------------------------------------------------------------------
+
+    ws_per_day = inst.rules.workshop_max_per_day
+    if ws_per_day < 999:
+        all_days_set = {k.day for k in inst.timeslot_keys_list}
+        all_periods_set = {k.period for k in inst.timeslot_keys_list}
+        physical_weeks = [
+            ("even", {WeekPattern.ALL, WeekPattern.EVEN}),
+            ("odd",  {WeekPattern.ALL, WeekPattern.ODD}),
+        ]
+
+        for c in inst.courses:
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+
+            ws_comps = [comp for comp in c.components if comp.component_type == ComponentType.WORKSHOP]
+            if not ws_comps:
+                continue
+
+            for y in all_years:
+                for sem in all_semesters:
+                    for d in all_days_set:
+                        for pw_label, wps in physical_weeks:
+                            period_ovs = defaultdict(list)
+                            for comp in ws_comps:
+                                for wp in wps:
+                                    for p in all_periods_set:
+                                        key_id = f"Y{y}_S{sem}_{wp.value}_D{d}_P{p}"
+                                        ov = vs.open.get((c.id, comp.id, key_id))
+                                        if ov is not None:
+                                            period_ovs[p].append(ov)
+
+                            if len(period_ovs) <= ws_per_day:
+                                continue
+
+                            indicators = []
+                            for p in period_ovs:
+                                ovs = period_ovs[p]
+                                if len(ovs) == 1:
+                                    indicators.append(ovs[0])
+                                else:
+                                    ind = model.new_bool_var(
+                                        f"wsday[{c.id},Y{y},S{sem},{pw_label},D{d},P{p}]")
+                                    link_or(model, ovs, ind)
+                                    indicators.append(ind)
+
+                            model.add(sum(indicators) <= ws_per_day)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Workshop-after-lecture: for each non-outside course, every open workshop slot must be
+    # AFTER at least one lecture of the same course (earlier day, or same day earlier period).
+    # Additionally, on the same day, no lecture may be scheduled at a period >= the workshop.
+    # ----------------------------------------------------------------------------------------------------------
+
+    if inst.rules.workshop_after_lecture:
+        # Pre-index lecture open vars by (course_id, year, semester, day) -> [(period, ov), ...]
+        lec_open_by_day = defaultdict(list)
+        for (cid, compid, kid), ov in vs.open.items():
+            comp = comp_by_id[(cid, compid)]
+            if comp.component_type != ComponentType.LECTURE:
+                continue
+            k = key_by_id[kid]
+            lec_open_by_day[(cid, k.year, k.semester, k.day)].append((k.period, ov))
+
+        for c in inst.courses:
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+
+            ws_comps = [comp for comp in c.components
+                        if comp.component_type == ComponentType.WORKSHOP]
+            if not ws_comps:
+                continue
+
+            for y in all_years:
+                for sem in all_semesters:
+                    # Collect all days that have lecture open vars
+                    lec_days = sorted({d for (cid, yy, ss, d) in lec_open_by_day
+                                       if cid == c.id and yy == y and ss == sem})
+                    if not lec_days:
+                        continue
+
+                    for ws_comp in ws_comps:
+                        for k in inst.allowed_timeslot_keys_for_component(c.id, ws_comp.id):
+                            if k.year != y or k.semester != sem:
+                                continue
+                            ov_ws = vs.open.get((c.id, ws_comp.id, k.id))
+                            if ov_ws is None:
+                                continue
+
+                            # Collect lecture open vars strictly before this workshop:
+                            #   - strictly earlier day: all periods count
+                            #   - same day: only periods strictly before the workshop period
+                            earlier_lec = []
+                            for ld in lec_days:
+                                if ld < k.day:
+                                    earlier_lec.extend(
+                                        ov for _, ov in lec_open_by_day.get((c.id, y, sem, ld), []))
+                                elif ld == k.day:
+                                    earlier_lec.extend(
+                                        ov for p, ov in lec_open_by_day.get((c.id, y, sem, ld), [])
+                                        if p < k.period)
+
+                            if earlier_lec:
+                                # If workshop is open, at least one earlier lecture must be open
+                                model.add(sum(earlier_lec) >= 1).only_enforce_if(ov_ws)
+                            else:
+                                # No lecture at an earlier slot possible -> forbid this workshop slot
+                                model.add(ov_ws == 0)
+
+                            # Same-day: forbid any lecture at period >= workshop period
+                            for p_lec, ov_lec in lec_open_by_day.get((c.id, y, sem, k.day), []):
+                                if p_lec >= k.period:
+                                    model.add(ov_ws + ov_lec <= 1)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Weekly / fortnightly workshop no-overlap: for each non-outside course, weekly workshops
+    # and fortnightly workshops cannot be open at the same physical timeslot.
+    # (weekly-weekly OK, fortnightly-fortnightly OK, weekly-fortnightly NOT OK)
+    # ----------------------------------------------------------------------------------------------------------
+
+    if inst.rules.ws_weekly_fortnightly_no_overlap:
+        from data.schema import Frequency
+
+        # Index workshop open vars by (course_id, base_id, frequency)
+        ws_by_freq = defaultdict(list)
+        for (cid, compid, kid), ov in vs.open.items():
+            comp = comp_by_id[(cid, compid)]
+            if comp.component_type != ComponentType.WORKSHOP:
+                continue
+            k = key_by_id[kid]
+            ws_by_freq[(cid, k.base_id, comp.frequency)].append((k.week_pattern, ov))
+
+        for c in inst.courses:
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+
+            bases = {base for (cid, base, _) in ws_by_freq if cid == c.id}
+            for base in bases:
+                wk_vars = ws_by_freq.get((c.id, base, Frequency.WEEKLY), [])
+                fn_vars = ws_by_freq.get((c.id, base, Frequency.FORTNIGHTLY), [])
+                if not wk_vars or not fn_vars:
+                    continue
+
+                # For each overlapping pattern pair (ALL vs ODD, ALL vs EVEN)
+                for wp_wk, wp_fn in [(WeekPattern.ALL, WeekPattern.ODD),
+                                     (WeekPattern.ALL, WeekPattern.EVEN)]:
+                    ovs_wk = [ov for (wp, ov) in wk_vars if wp == wp_wk]
+                    ovs_fn = [ov for (wp, ov) in fn_vars if wp == wp_fn]
+                    combined = ovs_wk + ovs_fn
+                    if len(combined) > 1:
+                        model.add(sum(combined) <= 1)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Max same-type workshops per timeslot: for the same course at any physical
+    # timeslot, at most N workshop sections of the same frequency type can be open.
+    # ----------------------------------------------------------------------------------------------------------
+
+    max_same_type_ws = inst.rules.max_same_type_ws_per_timeslot
+    if max_same_type_ws < 999:
+        from data.schema import Frequency
+
+        # Group workshop open vars by (course_id, base_id, week_pattern, frequency)
+        ws_global = defaultdict(list)
+        for (cid, compid, kid), ov in vs.open.items():
+            comp = comp_by_id[(cid, compid)]
+            if comp.component_type != ComponentType.WORKSHOP:
+                continue
+            c = inst.course_by_id[cid]
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+            k = key_by_id[kid]
+            ws_global[(cid, k.base_id, k.week_pattern, comp.frequency)].append(ov)
+
+        for (cid, base, wp, freq), ovs in ws_global.items():
+            if len(ovs) > max_same_type_ws:
+                model.add(sum(ovs) <= max_same_type_ws)
+
+
+    # ----------------------------------------------------------------------------------------------------------
+    # Same-day lectures consecutive: if the same course has >=2 lectures on the same day,
+    # they must occupy consecutive time periods (no gap between them).
+    # Implementation: for any two non-adjacent periods, forbid both having lectures.
+    # ----------------------------------------------------------------------------------------------------------
+
+    if inst.rules.same_day_lectures_consecutive:
+        all_days_set = {k.day for k in inst.timeslot_keys_list}
+        all_periods_set = sorted({k.period for k in inst.timeslot_keys_list})
+        physical_weeks = [
+            ("even", {WeekPattern.ALL, WeekPattern.EVEN}),
+            ("odd",  {WeekPattern.ALL, WeekPattern.ODD}),
+        ]
+
+        for c in inst.courses:
+            if c.kind == CourseKind.OUTSIDE:
+                continue
+
+            lec_comps = [comp for comp in c.components
+                         if comp.component_type == ComponentType.LECTURE]
+            if not lec_comps:
+                continue
+
+            for y in all_years:
+                for sem in all_semesters:
+                    for d in all_days_set:
+                        for pw_label, wps in physical_weeks:
+                            # Collect lecture open vars by period
+                            period_ovs = defaultdict(list)
+                            for comp in lec_comps:
+                                for wp in wps:
+                                    for p in all_periods_set:
+                                        key_id = f"Y{y}_S{sem}_{wp.value}_D{d}_P{p}"
+                                        ov = vs.open.get((c.id, comp.id, key_id))
+                                        if ov is not None:
+                                            period_ovs[p].append(ov)
+
+                            active_periods = sorted(period_ovs.keys())
+                            if len(active_periods) <= 1:
+                                continue
+
+                            # Create indicator per period: 1 if any lecture at that period
+                            ind_by_p = {}
+                            for p in active_periods:
+                                ovs = period_ovs[p]
+                                if len(ovs) == 1:
+                                    ind_by_p[p] = ovs[0]
+                                else:
+                                    ind = model.new_bool_var(
+                                        f"sdlc[{c.id},Y{y},S{sem},{pw_label},D{d},P{p}]")
+                                    link_or(model, ovs, ind)
+                                    ind_by_p[p] = ind
+
+                            # Forbid any two non-adjacent periods from both having lectures
+                            for i in range(len(active_periods)):
+                                for j in range(i + 1, len(active_periods)):
+                                    p1, p2 = active_periods[i], active_periods[j]
+                                    if p2 - p1 > 1:
+                                        model.add(ind_by_p[p1] + ind_by_p[p2] <= 1)

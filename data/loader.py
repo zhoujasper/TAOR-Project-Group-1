@@ -70,7 +70,22 @@ def load_rules(path):
     global_gw  = int(raw.pop("global_gateway_per_semester", 4))
     global_opt = int(raw.pop("global_optional_per_semester", 2))
     student_gap = int(raw.pop("student_max_daily_gap", 999))
+    student_slots = int(raw.pop("student_max_slots_per_day", 999))
     course_day  = int(raw.pop("course_max_slots_per_day", 999))
+    lec_per_day  = int(raw.pop("lecture_max_per_day", 999))
+    ws_per_day = int(raw.pop("workshop_max_per_day", 999))
+    ws_after_lec = bool(raw.pop("workshop_after_lecture", False))
+    max_conc_courses = int(raw.pop("max_concurrent_courses_per_timeslot", 999))
+    lunch_no_class = bool(raw.pop("lunch_break_no_class", False))
+    max_consec = int(raw.pop("student_max_consecutive_slots", 999))
+    no_first_period_pfx = tuple(raw.pop("no_first_period_prefixes", []))
+    no_fri_afternoon_pfx = tuple(raw.pop("no_friday_afternoon_prefixes", []))
+    ws_wk_fn_no_overlap = bool(raw.pop("ws_weekly_fortnightly_no_overlap", False))
+    max_same_type_ws = int(raw.pop("max_same_type_ws_per_timeslot", 999))
+    ext_lunch_days = frozenset(int(d) for d in raw.pop("extended_lunch_days", []))
+    ext_lunch_periods = frozenset(int(p) for p in raw.pop("extended_lunch_periods", []))
+    no_first_period_days = frozenset(int(d) for d in raw.pop("no_first_period_days", []))
+    same_day_lec_consec = bool(raw.pop("same_day_lectures_consecutive", False))
 
     for prog_str, r in raw.items():
         prog  =  parse_enum(ProgrammeKind, prog_str, field_name = "[programme type] in rules.json")
@@ -106,7 +121,22 @@ def load_rules(path):
         global_gateway_per_semester = global_gw,
         global_optional_per_semester = global_opt,
         student_max_daily_gap = student_gap,
+        student_max_slots_per_day = student_slots,
         course_max_slots_per_day = course_day,
+        lecture_max_per_day = lec_per_day,
+        workshop_max_per_day = ws_per_day,
+        workshop_after_lecture = ws_after_lec,
+        max_concurrent_courses_per_timeslot = max_conc_courses,
+        lunch_break_no_class = lunch_no_class,
+        student_max_consecutive_slots = max_consec,
+        no_first_period_prefixes = no_first_period_pfx,
+        no_friday_afternoon_prefixes = no_fri_afternoon_pfx,
+        ws_weekly_fortnightly_no_overlap = ws_wk_fn_no_overlap,
+        max_same_type_ws_per_timeslot = max_same_type_ws,
+        extended_lunch_days = ext_lunch_days,
+        extended_lunch_periods = ext_lunch_periods,
+        no_first_period_days = no_first_period_days,
+        same_day_lectures_consecutive = same_day_lec_consec,
     )
 
 
@@ -126,6 +156,7 @@ def load_courses_and_components(courses_csv: Path, components_csv: Path) -> list
             number_per_week = get_int(row, "number_per_week", 1),
             allowed_days = maybe_set_int(split_semicolon(row.get("allowed_days", ""))),
             allowed_periods = maybe_set_int(split_semicolon(row.get("allowed_periods", ""))),
+            allowed_timeslots = parse_timeslots(row.get("allowed_timeslots", "")),
             sections_min = get_int(row, "sections_min", 1),
             sections_max = get_int(row, "sections_max", 1),
             section_cap_min = get_int(row, "section_cap_min", 0),

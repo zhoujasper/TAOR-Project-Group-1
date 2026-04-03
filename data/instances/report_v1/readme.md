@@ -1,0 +1,2 @@
+- 每日学生最多只能有4门课（包含lecture和workshop）
+- workshop after lecture 为true.

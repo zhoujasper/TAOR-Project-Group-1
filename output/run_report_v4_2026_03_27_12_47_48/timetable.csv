@@ -1,0 +1,372 @@
+course_id,course_name,course_kind,component_id,component_type,year,semester,day,period,time,week_pattern,timeslot_key_id
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,Lec,lecture,3,1,Mon,0,9:00-10:00,every_week,Y3_S1_every_week_D0_P0
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,Lec,lecture,3,1,Tue,2,11:00-12:00,every_week,Y3_S1_every_week_D1_P2
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,Lec,lecture,3,1,Wed,6,15:00-16:00,every_week,Y3_S1_every_week_D2_P6
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,Ws,workshop,3,1,Thu,4,13:00-14:00,every_week,Y3_S1_every_week_D3_P4
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,fws,workshop,3,1,Fri,7,16:00-17:00,even_weeks,Y3_S1_even_weeks_D4_P7
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,Lec,lecture,3,1,Tue,0,9:00-10:00,every_week,Y3_S1_every_week_D1_P0
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,Lec,lecture,3,1,Wed,3,12:00-13:00,every_week,Y3_S1_every_week_D2_P3
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,Lec,lecture,3,1,Thu,8,17:00-18:00,every_week,Y3_S1_every_week_D3_P8
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,Ws,workshop,3,1,Thu,1,10:00-11:00,every_week,Y3_S1_every_week_D3_P1
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,fws,workshop,3,1,Mon,5,14:00-15:00,even_weeks,Y3_S1_even_weeks_D0_P5
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,Lec,lecture,3,1,Mon,1,10:00-11:00,every_week,Y3_S1_every_week_D0_P1
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,Lec,lecture,3,1,Tue,5,14:00-15:00,every_week,Y3_S1_every_week_D1_P5
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,Lec,lecture,3,1,Wed,0,9:00-10:00,every_week,Y3_S1_every_week_D2_P0
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,Ws,workshop,3,1,Wed,2,11:00-12:00,every_week,Y3_S1_every_week_D2_P2
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,fws,workshop,3,1,Thu,6,15:00-16:00,even_weeks,Y3_S1_even_weeks_D3_P6
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,Lec,lecture,3,1,Tue,1,10:00-11:00,every_week,Y3_S1_every_week_D1_P1
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,Lec,lecture,3,1,Thu,0,9:00-10:00,every_week,Y3_S1_every_week_D3_P0
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,Lec,lecture,3,1,Fri,2,11:00-12:00,every_week,Y3_S1_every_week_D4_P2
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,Ws,workshop,3,1,Mon,6,15:00-16:00,every_week,Y3_S1_every_week_D0_P6
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,fws,workshop,3,1,Wed,7,16:00-17:00,even_weeks,Y3_S1_even_weeks_D2_P7
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,Lec,lecture,3,1,Mon,2,11:00-12:00,every_week,Y3_S1_every_week_D0_P2
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,Lec,lecture,3,1,Tue,7,16:00-17:00,every_week,Y3_S1_every_week_D1_P7
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,Lec,lecture,3,1,Wed,1,10:00-11:00,every_week,Y3_S1_every_week_D2_P1
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,Ws,workshop,3,1,Fri,1,10:00-11:00,every_week,Y3_S1_every_week_D4_P1
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,fws,workshop,3,1,Tue,8,17:00-18:00,even_weeks,Y3_S1_even_weeks_D1_P8
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,Lec,lecture,3,1,Tue,3,12:00-13:00,every_week,Y3_S1_every_week_D1_P3
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,Lec,lecture,3,1,Wed,4,13:00-14:00,every_week,Y3_S1_every_week_D2_P4
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,Lec,lecture,3,1,Fri,3,12:00-13:00,every_week,Y3_S1_every_week_D4_P3
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,Ws,workshop,3,1,Mon,3,12:00-13:00,every_week,Y3_S1_every_week_D0_P3
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,fws,workshop,3,1,Fri,4,13:00-14:00,even_weeks,Y3_S1_even_weeks_D4_P4
+MATH_OP01,MATH_OP01,optional,Lec,lecture,3,1,Tue,7,16:00-17:00,every_week,Y3_S1_every_week_D1_P7
+MATH_OP01,MATH_OP01,optional,Lec,lecture,3,1,Fri,1,10:00-11:00,every_week,Y3_S1_every_week_D4_P1
+MATH_OP01,MATH_OP01,optional,Lec,lecture,3,1,Fri,4,13:00-14:00,every_week,Y3_S1_every_week_D4_P4
+MATH_OP01,MATH_OP01,optional,Ws,workshop,3,1,Wed,0,9:00-10:00,every_week,Y3_S1_every_week_D2_P0
+MATH_OP02,MATH_OP02,optional,Lec,lecture,3,1,Mon,4,13:00-14:00,every_week,Y3_S1_every_week_D0_P4
+MATH_OP02,MATH_OP02,optional,Lec,lecture,3,1,Wed,4,13:00-14:00,every_week,Y3_S1_every_week_D2_P4
+MATH_OP02,MATH_OP02,optional,Lec,lecture,3,1,Thu,3,12:00-13:00,every_week,Y3_S1_every_week_D3_P3
+MATH_OP02,MATH_OP02,optional,Ws,workshop,3,1,Tue,3,12:00-13:00,every_week,Y3_S1_every_week_D1_P3
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,3,1,Mon,3,12:00-13:00,every_week,Y3_S1_every_week_D0_P3
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,3,1,Tue,3,12:00-13:00,every_week,Y3_S1_every_week_D1_P3
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,3,1,Fri,5,14:00-15:00,every_week,Y3_S1_every_week_D4_P5
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,3,1,Mon,6,15:00-16:00,every_week,Y3_S1_every_week_D0_P6
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,3,1,Wed,4,13:00-14:00,every_week,Y3_S1_every_week_D2_P4
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,3,1,Thu,7,16:00-17:00,every_week,Y3_S1_every_week_D3_P7
+MATH_GW01,MATH_GW01,gateway,fws,workshop,3,1,Thu,3,12:00-13:00,even_weeks,Y3_S1_even_weeks_D3_P3
+MATH_GW01,MATH_GW01,gateway,fws,workshop,3,1,Fri,4,13:00-14:00,even_weeks,Y3_S1_even_weeks_D4_P4
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,3,1,Mon,6,15:00-16:00,every_week,Y3_S1_every_week_D0_P6
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,3,1,Thu,5,14:00-15:00,every_week,Y3_S1_every_week_D3_P5
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,3,1,Fri,2,11:00-12:00,every_week,Y3_S1_every_week_D4_P2
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,3,1,Tue,1,10:00-11:00,every_week,Y3_S1_every_week_D1_P1
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,3,1,Tue,4,13:00-14:00,every_week,Y3_S1_every_week_D1_P4
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,3,1,Thu,3,12:00-13:00,every_week,Y3_S1_every_week_D3_P3
+MATH_GW02,MATH_GW02,gateway,fws,workshop,3,1,Mon,5,14:00-15:00,even_weeks,Y3_S1_even_weeks_D0_P5
+MATH_GW02,MATH_GW02,gateway,fws,workshop,3,1,Wed,3,12:00-13:00,even_weeks,Y3_S1_even_weeks_D2_P3
+MATH_GW02,MATH_GW02,gateway,fws,workshop,3,1,Wed,6,15:00-16:00,even_weeks,Y3_S1_even_weeks_D2_P6
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,3,1,Mon,2,11:00-12:00,every_week,Y3_S1_every_week_D0_P2
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,3,1,Tue,6,15:00-16:00,every_week,Y3_S1_every_week_D1_P6
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,3,1,Wed,2,11:00-12:00,every_week,Y3_S1_every_week_D2_P2
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,3,1,Wed,6,15:00-16:00,every_week,Y3_S1_every_week_D2_P6
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,3,1,Thu,5,14:00-15:00,every_week,Y3_S1_every_week_D3_P5
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,3,1,Thu,8,17:00-18:00,every_week,Y3_S1_every_week_D3_P8
+MATH_GW03,MATH_GW03,gateway,fws,workshop,3,1,Mon,3,12:00-13:00,even_weeks,Y3_S1_even_weeks_D0_P3
+MATH_GW03,MATH_GW03,gateway,fws,workshop,3,1,Fri,6,15:00-16:00,even_weeks,Y3_S1_even_weeks_D4_P6
+MATH_GW03,MATH_GW03,gateway,fws,workshop,3,1,Fri,8,17:00-18:00,even_weeks,Y3_S1_even_weeks_D4_P8
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,3,1,Mon,5,14:00-15:00,every_week,Y3_S1_every_week_D0_P5
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,3,1,Tue,4,13:00-14:00,every_week,Y3_S1_every_week_D1_P4
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,3,1,Fri,5,14:00-15:00,every_week,Y3_S1_every_week_D4_P5
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,3,1,Wed,3,12:00-13:00,every_week,Y3_S1_every_week_D2_P3
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,3,1,Thu,7,16:00-17:00,every_week,Y3_S1_every_week_D3_P7
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,3,1,Fri,2,11:00-12:00,every_week,Y3_S1_every_week_D4_P2
+MATH_GW04,MATH_GW04,gateway,fws,workshop,3,1,Mon,8,17:00-18:00,even_weeks,Y3_S1_even_weeks_D0_P8
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,Lec,lecture,3,1,Mon,4,13:00-14:00,every_week,Y3_S1_every_week_D0_P4
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,Lec,lecture,3,1,Thu,3,12:00-13:00,every_week,Y3_S1_every_week_D3_P3
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,Lec,lecture,3,1,Fri,0,9:00-10:00,every_week,Y3_S1_every_week_D4_P0
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,Ws,workshop,3,1,Tue,6,15:00-16:00,every_week,Y3_S1_every_week_D1_P6
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,fws,workshop,3,1,Wed,5,14:00-15:00,even_weeks,Y3_S1_even_weeks_D2_P5
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,Lec,lecture,3,1,Mon,7,16:00-17:00,every_week,Y3_S1_every_week_D0_P7
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,Lec,lecture,3,1,Tue,1,10:00-11:00,every_week,Y3_S1_every_week_D1_P1
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,Lec,lecture,3,1,Fri,8,17:00-18:00,every_week,Y3_S1_every_week_D4_P8
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,Ws,workshop,3,1,Tue,2,11:00-12:00,every_week,Y3_S1_every_week_D1_P2
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,fws,workshop,3,1,Thu,5,14:00-15:00,even_weeks,Y3_S1_even_weeks_D3_P5
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,Lec,lecture,3,1,Mon,8,17:00-18:00,every_week,Y3_S1_every_week_D0_P8
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,Lec,lecture,3,1,Tue,4,13:00-14:00,every_week,Y3_S1_every_week_D1_P4
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,Lec,lecture,3,1,Fri,6,15:00-16:00,every_week,Y3_S1_every_week_D4_P6
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,Ws,workshop,3,1,Thu,7,16:00-17:00,every_week,Y3_S1_every_week_D3_P7
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,fws,workshop,3,1,Wed,1,10:00-11:00,even_weeks,Y3_S1_even_weeks_D2_P1
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,Lec,lecture,3,1,Wed,8,17:00-18:00,every_week,Y3_S1_every_week_D2_P8
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,Lec,lecture,3,1,Thu,2,11:00-12:00,every_week,Y3_S1_every_week_D3_P2
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,Lec,lecture,3,1,Fri,3,12:00-13:00,every_week,Y3_S1_every_week_D4_P3
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,Ws,workshop,3,1,Wed,6,15:00-16:00,every_week,Y3_S1_every_week_D2_P6
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,fws,workshop,3,1,Tue,0,9:00-10:00,even_weeks,Y3_S1_even_weeks_D1_P0
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,Lec,lecture,3,2,Wed,1,10:00-11:00,every_week,Y3_S2_every_week_D2_P1
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,Lec,lecture,3,2,Thu,5,14:00-15:00,every_week,Y3_S2_every_week_D3_P5
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,Lec,lecture,3,2,Fri,0,9:00-10:00,every_week,Y3_S2_every_week_D4_P0
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,Ws,workshop,3,2,Fri,2,11:00-12:00,every_week,Y3_S2_every_week_D4_P2
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,fws,workshop,3,2,Mon,6,15:00-16:00,even_weeks,Y3_S2_even_weeks_D0_P6
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,Lec,lecture,3,2,Mon,0,9:00-10:00,every_week,Y3_S2_every_week_D0_P0
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,Lec,lecture,3,2,Tue,2,11:00-12:00,every_week,Y3_S2_every_week_D1_P2
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,Lec,lecture,3,2,Thu,1,10:00-11:00,every_week,Y3_S2_every_week_D3_P1
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,Ws,workshop,3,2,Wed,6,15:00-16:00,every_week,Y3_S2_every_week_D2_P6
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,fws,workshop,3,2,Fri,7,16:00-17:00,even_weeks,Y3_S2_even_weeks_D4_P7
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,Lec,lecture,3,2,Mon,4,13:00-14:00,every_week,Y3_S2_every_week_D0_P4
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,Lec,lecture,3,2,Thu,3,12:00-13:00,every_week,Y3_S2_every_week_D3_P3
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,Lec,lecture,3,2,Fri,0,9:00-10:00,every_week,Y3_S2_every_week_D4_P0
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,Ws,workshop,3,2,Tue,6,15:00-16:00,every_week,Y3_S2_every_week_D1_P6
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,fws,workshop,3,2,Wed,5,14:00-15:00,even_weeks,Y3_S2_even_weeks_D2_P5
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,Lec,lecture,3,2,Mon,7,16:00-17:00,every_week,Y3_S2_every_week_D0_P7
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,Lec,lecture,3,2,Tue,1,10:00-11:00,every_week,Y3_S2_every_week_D1_P1
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,Lec,lecture,3,2,Fri,8,17:00-18:00,every_week,Y3_S2_every_week_D4_P8
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,Ws,workshop,3,2,Tue,2,11:00-12:00,every_week,Y3_S2_every_week_D1_P2
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,fws,workshop,3,2,Thu,5,14:00-15:00,even_weeks,Y3_S2_even_weeks_D3_P5
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,Lec,lecture,3,2,Mon,8,17:00-18:00,every_week,Y3_S2_every_week_D0_P8
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,Lec,lecture,3,2,Tue,4,13:00-14:00,every_week,Y3_S2_every_week_D1_P4
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,Lec,lecture,3,2,Fri,5,14:00-15:00,every_week,Y3_S2_every_week_D4_P5
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,Ws,workshop,3,2,Thu,7,16:00-17:00,every_week,Y3_S2_every_week_D3_P7
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,fws,workshop,3,2,Wed,1,10:00-11:00,even_weeks,Y3_S2_even_weeks_D2_P1
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,Lec,lecture,3,2,Wed,8,17:00-18:00,every_week,Y3_S2_every_week_D2_P8
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,Lec,lecture,3,2,Thu,2,11:00-12:00,every_week,Y3_S2_every_week_D3_P2
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,Lec,lecture,3,2,Fri,2,11:00-12:00,every_week,Y3_S2_every_week_D4_P2
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,Ws,workshop,3,2,Wed,6,15:00-16:00,every_week,Y3_S2_every_week_D2_P6
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,fws,workshop,3,2,Tue,0,9:00-10:00,even_weeks,Y3_S2_even_weeks_D1_P0
+MATH_OP03,MATH_OP03,optional,Lec,lecture,3,2,Tue,2,11:00-12:00,every_week,Y3_S2_every_week_D1_P2
+MATH_OP03,MATH_OP03,optional,Lec,lecture,3,2,Wed,3,12:00-13:00,every_week,Y3_S2_every_week_D2_P3
+MATH_OP03,MATH_OP03,optional,Lec,lecture,3,2,Fri,4,13:00-14:00,every_week,Y3_S2_every_week_D4_P4
+MATH_OP03,MATH_OP03,optional,Ws,workshop,3,2,Thu,5,14:00-15:00,every_week,Y3_S2_every_week_D3_P5
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,3,2,Mon,5,14:00-15:00,every_week,Y3_S2_every_week_D0_P5
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,3,2,Tue,5,14:00-15:00,every_week,Y3_S2_every_week_D1_P5
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,3,2,Wed,6,15:00-16:00,every_week,Y3_S2_every_week_D2_P6
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,3,2,Thu,3,12:00-13:00,every_week,Y3_S2_every_week_D3_P3
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,3,2,Thu,8,17:00-18:00,every_week,Y3_S2_every_week_D3_P8
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,3,2,Fri,3,12:00-13:00,every_week,Y3_S2_every_week_D4_P3
+MATH_GW05,MATH_GW05,gateway,fws,workshop,3,2,Thu,8,17:00-18:00,even_weeks,Y3_S2_even_weeks_D3_P8
+MATH_GW05,MATH_GW05,gateway,fws,workshop,3,2,Fri,2,11:00-12:00,even_weeks,Y3_S2_even_weeks_D4_P2
+MATH_GW05,MATH_GW05,gateway,fws,workshop,3,2,Fri,3,12:00-13:00,even_weeks,Y3_S2_even_weeks_D4_P3
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,3,2,Mon,1,10:00-11:00,every_week,Y3_S2_every_week_D0_P1
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,3,2,Tue,4,13:00-14:00,every_week,Y3_S2_every_week_D1_P4
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,3,2,Wed,3,12:00-13:00,every_week,Y3_S2_every_week_D2_P3
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,3,2,Mon,4,13:00-14:00,every_week,Y3_S2_every_week_D0_P4
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,3,2,Tue,1,10:00-11:00,every_week,Y3_S2_every_week_D1_P1
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,3,2,Thu,4,13:00-14:00,every_week,Y3_S2_every_week_D3_P4
+MATH_GW06,MATH_GW06,gateway,fws,workshop,3,2,Wed,8,17:00-18:00,even_weeks,Y3_S2_even_weeks_D2_P8
+MATH_GW06,MATH_GW06,gateway,fws,workshop,3,2,Fri,0,9:00-10:00,even_weeks,Y3_S2_even_weeks_D4_P0
+MATH_GW06,MATH_GW06,gateway,fws,workshop,3,2,Fri,3,12:00-13:00,even_weeks,Y3_S2_even_weeks_D4_P3
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,3,2,Mon,3,12:00-13:00,every_week,Y3_S2_every_week_D0_P3
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,3,2,Wed,7,16:00-17:00,every_week,Y3_S2_every_week_D2_P7
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,3,2,Thu,4,13:00-14:00,every_week,Y3_S2_every_week_D3_P4
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,3,2,Wed,4,13:00-14:00,every_week,Y3_S2_every_week_D2_P4
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,3,2,Thu,5,14:00-15:00,every_week,Y3_S2_every_week_D3_P5
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,3,2,Fri,6,15:00-16:00,every_week,Y3_S2_every_week_D4_P6
+MATH_GW07,MATH_GW07,gateway,fws,workshop,3,2,Tue,3,12:00-13:00,even_weeks,Y3_S2_even_weeks_D1_P3
+MATH_GW07,MATH_GW07,gateway,fws,workshop,3,2,Fri,4,13:00-14:00,even_weeks,Y3_S2_even_weeks_D4_P4
+MATH_GW07,MATH_GW07,gateway,fws,workshop,3,2,Fri,6,15:00-16:00,even_weeks,Y3_S2_even_weeks_D4_P6
+MATH_OP04,MATH_OP04,optional,Lec,lecture,3,2,Tue,5,14:00-15:00,every_week,Y3_S2_every_week_D1_P5
+MATH_OP04,MATH_OP04,optional,Lec,lecture,3,2,Wed,2,11:00-12:00,every_week,Y3_S2_every_week_D2_P2
+MATH_OP04,MATH_OP04,optional,Lec,lecture,3,2,Fri,2,11:00-12:00,every_week,Y3_S2_every_week_D4_P2
+MATH_OP04,MATH_OP04,optional,Ws,workshop,3,2,Fri,5,14:00-15:00,every_week,Y3_S2_every_week_D4_P5
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,3,2,Mon,2,11:00-12:00,every_week,Y3_S2_every_week_D0_P2
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,3,2,Mon,5,14:00-15:00,every_week,Y3_S2_every_week_D0_P5
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,3,2,Thu,2,11:00-12:00,every_week,Y3_S2_every_week_D3_P2
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,3,2,Tue,1,10:00-11:00,every_week,Y3_S2_every_week_D1_P1
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,3,2,Tue,3,12:00-13:00,every_week,Y3_S2_every_week_D1_P3
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,3,2,Thu,3,12:00-13:00,every_week,Y3_S2_every_week_D3_P3
+MATH_GW08,MATH_GW08,gateway,fws,workshop,3,2,Tue,1,10:00-11:00,even_weeks,Y3_S2_even_weeks_D1_P1
+MATH_GW08,MATH_GW08,gateway,fws,workshop,3,2,Wed,5,14:00-15:00,even_weeks,Y3_S2_even_weeks_D2_P5
+MATH_GW08,MATH_GW08,gateway,fws,workshop,3,2,Fri,4,13:00-14:00,even_weeks,Y3_S2_even_weeks_D4_P4
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,Lec,lecture,3,2,Mon,2,11:00-12:00,every_week,Y3_S2_every_week_D0_P2
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,Lec,lecture,3,2,Tue,7,16:00-17:00,every_week,Y3_S2_every_week_D1_P7
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,Lec,lecture,3,2,Wed,1,10:00-11:00,every_week,Y3_S2_every_week_D2_P1
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,Ws,workshop,3,2,Fri,1,10:00-11:00,every_week,Y3_S2_every_week_D4_P1
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,fws,workshop,3,2,Tue,8,17:00-18:00,even_weeks,Y3_S2_even_weeks_D1_P8
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,Lec,lecture,3,2,Tue,3,12:00-13:00,every_week,Y3_S2_every_week_D1_P3
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,Lec,lecture,3,2,Wed,4,13:00-14:00,every_week,Y3_S2_every_week_D2_P4
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,Lec,lecture,3,2,Fri,3,12:00-13:00,every_week,Y3_S2_every_week_D4_P3
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,Ws,workshop,3,2,Mon,3,12:00-13:00,every_week,Y3_S2_every_week_D0_P3
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,fws,workshop,3,2,Fri,4,13:00-14:00,even_weeks,Y3_S2_even_weeks_D4_P4
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,Lec,lecture,3,2,Mon,2,11:00-12:00,every_week,Y3_S2_every_week_D0_P2
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,Lec,lecture,3,2,Tue,6,15:00-16:00,every_week,Y3_S2_every_week_D1_P6
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,Lec,lecture,3,2,Fri,0,9:00-10:00,every_week,Y3_S2_every_week_D4_P0
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,Ws,workshop,3,2,Wed,4,13:00-14:00,every_week,Y3_S2_every_week_D2_P4
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,fws,workshop,3,2,Thu,7,16:00-17:00,even_weeks,Y3_S2_even_weeks_D3_P7
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,Lec,lecture,3,2,Mon,0,9:00-10:00,every_week,Y3_S2_every_week_D0_P0
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,Lec,lecture,3,2,Tue,3,12:00-13:00,every_week,Y3_S2_every_week_D1_P3
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,Lec,lecture,3,2,Wed,8,17:00-18:00,every_week,Y3_S2_every_week_D2_P8
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,Ws,workshop,3,2,Wed,1,10:00-11:00,every_week,Y3_S2_every_week_D2_P1
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,fws,workshop,3,2,Fri,5,14:00-15:00,even_weeks,Y3_S2_even_weeks_D4_P5
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,Lec,lecture,4,1,Mon,4,13:00-14:00,every_week,Y4_S1_every_week_D0_P4
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,Lec,lecture,4,1,Thu,3,12:00-13:00,every_week,Y4_S1_every_week_D3_P3
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,Lec,lecture,4,1,Fri,0,9:00-10:00,every_week,Y4_S1_every_week_D4_P0
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,Ws,workshop,4,1,Tue,6,15:00-16:00,every_week,Y4_S1_every_week_D1_P6
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,fws,workshop,4,1,Wed,5,14:00-15:00,even_weeks,Y4_S1_even_weeks_D2_P5
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,Lec,lecture,4,1,Mon,7,16:00-17:00,every_week,Y4_S1_every_week_D0_P7
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,Lec,lecture,4,1,Tue,1,10:00-11:00,every_week,Y4_S1_every_week_D1_P1
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,Lec,lecture,4,1,Fri,8,17:00-18:00,every_week,Y4_S1_every_week_D4_P8
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,Ws,workshop,4,1,Tue,2,11:00-12:00,every_week,Y4_S1_every_week_D1_P2
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,fws,workshop,4,1,Thu,5,14:00-15:00,even_weeks,Y4_S1_even_weeks_D3_P5
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,Lec,lecture,4,1,Mon,2,11:00-12:00,every_week,Y4_S1_every_week_D0_P2
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,Lec,lecture,4,1,Tue,7,16:00-17:00,every_week,Y4_S1_every_week_D1_P7
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,Lec,lecture,4,1,Wed,1,10:00-11:00,every_week,Y4_S1_every_week_D2_P1
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,Ws,workshop,4,1,Fri,1,10:00-11:00,every_week,Y4_S1_every_week_D4_P1
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,fws,workshop,4,1,Tue,8,17:00-18:00,even_weeks,Y4_S1_even_weeks_D1_P8
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,Lec,lecture,4,1,Tue,3,12:00-13:00,every_week,Y4_S1_every_week_D1_P3
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,Lec,lecture,4,1,Wed,4,13:00-14:00,every_week,Y4_S1_every_week_D2_P4
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,Lec,lecture,4,1,Fri,3,12:00-13:00,every_week,Y4_S1_every_week_D4_P3
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,Ws,workshop,4,1,Mon,3,12:00-13:00,every_week,Y4_S1_every_week_D0_P3
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,fws,workshop,4,1,Fri,4,13:00-14:00,even_weeks,Y4_S1_even_weeks_D4_P4
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,Lec,lecture,4,1,Tue,0,9:00-10:00,every_week,Y4_S1_every_week_D1_P0
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,Lec,lecture,4,1,Wed,2,11:00-12:00,every_week,Y4_S1_every_week_D2_P2
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,Lec,lecture,4,1,Thu,6,15:00-16:00,every_week,Y4_S1_every_week_D3_P6
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,Ws,workshop,4,1,Fri,4,13:00-14:00,every_week,Y4_S1_every_week_D4_P4
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,fws,workshop,4,1,Mon,7,16:00-17:00,even_weeks,Y4_S1_even_weeks_D0_P7
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,Lec,lecture,4,1,Wed,0,9:00-10:00,every_week,Y4_S1_every_week_D2_P0
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,Lec,lecture,4,1,Thu,3,12:00-13:00,every_week,Y4_S1_every_week_D3_P3
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,Lec,lecture,4,1,Fri,8,17:00-18:00,every_week,Y4_S1_every_week_D4_P8
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,Ws,workshop,4,1,Mon,1,10:00-11:00,every_week,Y4_S1_every_week_D0_P1
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,fws,workshop,4,1,Tue,5,14:00-15:00,even_weeks,Y4_S1_even_weeks_D1_P5
+MATH_OP01,MATH_OP01,optional,Lec,lecture,4,1,Wed,2,11:00-12:00,every_week,Y4_S1_every_week_D2_P2
+MATH_OP01,MATH_OP01,optional,Lec,lecture,4,1,Thu,4,13:00-14:00,every_week,Y4_S1_every_week_D3_P4
+MATH_OP01,MATH_OP01,optional,Lec,lecture,4,1,Fri,5,14:00-15:00,every_week,Y4_S1_every_week_D4_P5
+MATH_OP01,MATH_OP01,optional,Ws,workshop,4,1,Fri,2,11:00-12:00,every_week,Y4_S1_every_week_D4_P2
+MATH_OP02,MATH_OP02,optional,Lec,lecture,4,1,Mon,5,14:00-15:00,every_week,Y4_S1_every_week_D0_P5
+MATH_OP02,MATH_OP02,optional,Lec,lecture,4,1,Wed,6,15:00-16:00,every_week,Y4_S1_every_week_D2_P6
+MATH_OP02,MATH_OP02,optional,Lec,lecture,4,1,Thu,4,13:00-14:00,every_week,Y4_S1_every_week_D3_P4
+MATH_OP02,MATH_OP02,optional,Ws,workshop,4,1,Tue,5,14:00-15:00,every_week,Y4_S1_every_week_D1_P5
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,4,1,Mon,7,16:00-17:00,every_week,Y4_S1_every_week_D0_P7
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,4,1,Tue,2,11:00-12:00,every_week,Y4_S1_every_week_D1_P2
+MATH_GW01,MATH_GW01,gateway,Lec,lecture,4,1,Thu,5,14:00-15:00,every_week,Y4_S1_every_week_D3_P5
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,4,1,Tue,0,9:00-10:00,every_week,Y4_S1_every_week_D1_P0
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,4,1,Wed,4,13:00-14:00,every_week,Y4_S1_every_week_D2_P4
+MATH_GW01,MATH_GW01,gateway,Ws,workshop,4,1,Fri,4,13:00-14:00,every_week,Y4_S1_every_week_D4_P4
+MATH_GW01,MATH_GW01,gateway,fws,workshop,4,1,Mon,8,17:00-18:00,even_weeks,Y4_S1_even_weeks_D0_P8
+MATH_GW01,MATH_GW01,gateway,fws,workshop,4,1,Wed,3,12:00-13:00,even_weeks,Y4_S1_even_weeks_D2_P3
+MATH_GW01,MATH_GW01,gateway,fws,workshop,4,1,Fri,3,12:00-13:00,even_weeks,Y4_S1_even_weeks_D4_P3
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,4,1,Mon,4,13:00-14:00,every_week,Y4_S1_every_week_D0_P4
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,4,1,Tue,4,13:00-14:00,every_week,Y4_S1_every_week_D1_P4
+MATH_GW02,MATH_GW02,gateway,Lec,lecture,4,1,Thu,1,10:00-11:00,every_week,Y4_S1_every_week_D3_P1
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,4,1,Tue,3,12:00-13:00,every_week,Y4_S1_every_week_D1_P3
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,4,1,Wed,3,12:00-13:00,every_week,Y4_S1_every_week_D2_P3
+MATH_GW02,MATH_GW02,gateway,Ws,workshop,4,1,Wed,5,14:00-15:00,every_week,Y4_S1_every_week_D2_P5
+MATH_GW02,MATH_GW02,gateway,fws,workshop,4,1,Mon,3,12:00-13:00,even_weeks,Y4_S1_even_weeks_D0_P3
+MATH_GW02,MATH_GW02,gateway,fws,workshop,4,1,Wed,3,12:00-13:00,even_weeks,Y4_S1_even_weeks_D2_P3
+MATH_GW02,MATH_GW02,gateway,fws,workshop,4,1,Thu,3,12:00-13:00,even_weeks,Y4_S1_even_weeks_D3_P3
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,4,1,Mon,3,12:00-13:00,every_week,Y4_S1_every_week_D0_P3
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,4,1,Tue,3,12:00-13:00,every_week,Y4_S1_every_week_D1_P3
+MATH_GW03,MATH_GW03,gateway,Lec,lecture,4,1,Thu,4,13:00-14:00,every_week,Y4_S1_every_week_D3_P4
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,4,1,Mon,6,15:00-16:00,every_week,Y4_S1_every_week_D0_P6
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,4,1,Thu,1,10:00-11:00,every_week,Y4_S1_every_week_D3_P1
+MATH_GW03,MATH_GW03,gateway,Ws,workshop,4,1,Fri,7,16:00-17:00,every_week,Y4_S1_every_week_D4_P7
+MATH_GW03,MATH_GW03,gateway,fws,workshop,4,1,Mon,6,15:00-16:00,even_weeks,Y4_S1_even_weeks_D0_P6
+MATH_GW03,MATH_GW03,gateway,fws,workshop,4,1,Tue,5,14:00-15:00,even_weeks,Y4_S1_even_weeks_D1_P5
+MATH_GW03,MATH_GW03,gateway,fws,workshop,4,1,Wed,5,14:00-15:00,even_weeks,Y4_S1_even_weeks_D2_P5
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,4,1,Mon,5,14:00-15:00,every_week,Y4_S1_every_week_D0_P5
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,4,1,Tue,4,13:00-14:00,every_week,Y4_S1_every_week_D1_P4
+MATH_GW04,MATH_GW04,gateway,Lec,lecture,4,1,Fri,6,15:00-16:00,every_week,Y4_S1_every_week_D4_P6
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,4,1,Wed,5,14:00-15:00,every_week,Y4_S1_every_week_D2_P5
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,4,1,Thu,3,12:00-13:00,every_week,Y4_S1_every_week_D3_P3
+MATH_GW04,MATH_GW04,gateway,Ws,workshop,4,1,Fri,3,12:00-13:00,every_week,Y4_S1_every_week_D4_P3
+MATH_GW04,MATH_GW04,gateway,fws,workshop,4,1,Mon,8,17:00-18:00,even_weeks,Y4_S1_even_weeks_D0_P8
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,Lec,lecture,4,1,Mon,8,17:00-18:00,every_week,Y4_S1_every_week_D0_P8
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,Lec,lecture,4,1,Tue,4,13:00-14:00,every_week,Y4_S1_every_week_D1_P4
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,Lec,lecture,4,1,Fri,5,14:00-15:00,every_week,Y4_S1_every_week_D4_P5
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,Ws,workshop,4,1,Thu,7,16:00-17:00,every_week,Y4_S1_every_week_D3_P7
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,fws,workshop,4,1,Wed,1,10:00-11:00,even_weeks,Y4_S1_even_weeks_D2_P1
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,Lec,lecture,4,1,Wed,8,17:00-18:00,every_week,Y4_S1_every_week_D2_P8
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,Lec,lecture,4,1,Thu,2,11:00-12:00,every_week,Y4_S1_every_week_D3_P2
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,Lec,lecture,4,1,Fri,2,11:00-12:00,every_week,Y4_S1_every_week_D4_P2
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,Ws,workshop,4,1,Wed,6,15:00-16:00,every_week,Y4_S1_every_week_D2_P6
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,fws,workshop,4,1,Tue,0,9:00-10:00,even_weeks,Y4_S1_even_weeks_D1_P0
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,Lec,lecture,4,1,Mon,1,10:00-11:00,every_week,Y4_S1_every_week_D0_P1
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,Lec,lecture,4,1,Tue,5,14:00-15:00,every_week,Y4_S1_every_week_D1_P5
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,Lec,lecture,4,1,Wed,0,9:00-10:00,every_week,Y4_S1_every_week_D2_P0
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,Ws,workshop,4,1,Wed,2,11:00-12:00,every_week,Y4_S1_every_week_D2_P2
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,fws,workshop,4,1,Thu,6,15:00-16:00,even_weeks,Y4_S1_even_weeks_D3_P6
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,Lec,lecture,4,1,Tue,1,10:00-11:00,every_week,Y4_S1_every_week_D1_P1
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,Lec,lecture,4,1,Thu,0,9:00-10:00,every_week,Y4_S1_every_week_D3_P0
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,Lec,lecture,4,1,Fri,2,11:00-12:00,every_week,Y4_S1_every_week_D4_P2
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,Ws,workshop,4,1,Mon,6,15:00-16:00,every_week,Y4_S1_every_week_D0_P6
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,fws,workshop,4,1,Wed,7,16:00-17:00,even_weeks,Y4_S1_even_weeks_D2_P7
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,Lec,lecture,4,2,Mon,2,11:00-12:00,every_week,Y4_S2_every_week_D0_P2
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,Lec,lecture,4,2,Tue,7,16:00-17:00,every_week,Y4_S2_every_week_D1_P7
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,Lec,lecture,4,2,Wed,1,10:00-11:00,every_week,Y4_S2_every_week_D2_P1
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,Ws,workshop,4,2,Fri,1,10:00-11:00,every_week,Y4_S2_every_week_D4_P1
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,fws,workshop,4,2,Tue,8,17:00-18:00,even_weeks,Y4_S2_even_weeks_D1_P8
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,Lec,lecture,4,2,Tue,3,12:00-13:00,every_week,Y4_S2_every_week_D1_P3
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,Lec,lecture,4,2,Wed,4,13:00-14:00,every_week,Y4_S2_every_week_D2_P4
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,Lec,lecture,4,2,Fri,3,12:00-13:00,every_week,Y4_S2_every_week_D4_P3
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,Ws,workshop,4,2,Mon,3,12:00-13:00,every_week,Y4_S2_every_week_D0_P3
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,fws,workshop,4,2,Fri,4,13:00-14:00,even_weeks,Y4_S2_even_weeks_D4_P4
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,Lec,lecture,4,2,Mon,4,13:00-14:00,every_week,Y4_S2_every_week_D0_P4
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,Lec,lecture,4,2,Thu,3,12:00-13:00,every_week,Y4_S2_every_week_D3_P3
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,Lec,lecture,4,2,Fri,0,9:00-10:00,every_week,Y4_S2_every_week_D4_P0
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,Ws,workshop,4,2,Tue,6,15:00-16:00,every_week,Y4_S2_every_week_D1_P6
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,fws,workshop,4,2,Wed,5,14:00-15:00,even_weeks,Y4_S2_even_weeks_D2_P5
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,Lec,lecture,4,2,Mon,7,16:00-17:00,every_week,Y4_S2_every_week_D0_P7
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,Lec,lecture,4,2,Tue,1,10:00-11:00,every_week,Y4_S2_every_week_D1_P1
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,Lec,lecture,4,2,Fri,8,17:00-18:00,every_week,Y4_S2_every_week_D4_P8
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,Ws,workshop,4,2,Tue,2,11:00-12:00,every_week,Y4_S2_every_week_D1_P2
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,fws,workshop,4,2,Thu,5,14:00-15:00,even_weeks,Y4_S2_even_weeks_D3_P5
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,Lec,lecture,4,2,Mon,1,10:00-11:00,every_week,Y4_S2_every_week_D0_P1
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,Lec,lecture,4,2,Tue,5,14:00-15:00,every_week,Y4_S2_every_week_D1_P5
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,Lec,lecture,4,2,Wed,0,9:00-10:00,every_week,Y4_S2_every_week_D2_P0
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,Ws,workshop,4,2,Wed,2,11:00-12:00,every_week,Y4_S2_every_week_D2_P2
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,fws,workshop,4,2,Thu,6,15:00-16:00,even_weeks,Y4_S2_even_weeks_D3_P6
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,Lec,lecture,4,2,Tue,1,10:00-11:00,every_week,Y4_S2_every_week_D1_P1
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,Lec,lecture,4,2,Thu,0,9:00-10:00,every_week,Y4_S2_every_week_D3_P0
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,Lec,lecture,4,2,Fri,2,11:00-12:00,every_week,Y4_S2_every_week_D4_P2
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,Ws,workshop,4,2,Mon,6,15:00-16:00,every_week,Y4_S2_every_week_D0_P6
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,fws,workshop,4,2,Wed,7,16:00-17:00,even_weeks,Y4_S2_even_weeks_D2_P7
+MATH_OP03,MATH_OP03,optional,Lec,lecture,4,2,Mon,2,11:00-12:00,every_week,Y4_S2_every_week_D0_P2
+MATH_OP03,MATH_OP03,optional,Lec,lecture,4,2,Wed,0,9:00-10:00,every_week,Y4_S2_every_week_D2_P0
+MATH_OP03,MATH_OP03,optional,Lec,lecture,4,2,Thu,6,15:00-16:00,every_week,Y4_S2_every_week_D3_P6
+MATH_OP03,MATH_OP03,optional,Ws,workshop,4,2,Mon,1,10:00-11:00,every_week,Y4_S2_every_week_D0_P1
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,4,2,Tue,4,13:00-14:00,every_week,Y4_S2_every_week_D1_P4
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,4,2,Wed,3,12:00-13:00,every_week,Y4_S2_every_week_D2_P3
+MATH_GW05,MATH_GW05,gateway,Lec,lecture,4,2,Wed,6,15:00-16:00,every_week,Y4_S2_every_week_D2_P6
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,4,2,Thu,1,10:00-11:00,every_week,Y4_S2_every_week_D3_P1
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,4,2,Fri,2,11:00-12:00,every_week,Y4_S2_every_week_D4_P2
+MATH_GW05,MATH_GW05,gateway,Ws,workshop,4,2,Fri,7,16:00-17:00,every_week,Y4_S2_every_week_D4_P7
+MATH_GW05,MATH_GW05,gateway,fws,workshop,4,2,Tue,0,9:00-10:00,even_weeks,Y4_S2_even_weeks_D1_P0
+MATH_GW05,MATH_GW05,gateway,fws,workshop,4,2,Thu,1,10:00-11:00,even_weeks,Y4_S2_even_weeks_D3_P1
+MATH_GW05,MATH_GW05,gateway,fws,workshop,4,2,Thu,4,13:00-14:00,even_weeks,Y4_S2_even_weeks_D3_P4
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,4,2,Mon,5,14:00-15:00,every_week,Y4_S2_every_week_D0_P5
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,4,2,Thu,2,11:00-12:00,every_week,Y4_S2_every_week_D3_P2
+MATH_GW06,MATH_GW06,gateway,Lec,lecture,4,2,Fri,5,14:00-15:00,every_week,Y4_S2_every_week_D4_P5
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,4,2,Tue,3,12:00-13:00,every_week,Y4_S2_every_week_D1_P3
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,4,2,Tue,6,15:00-16:00,every_week,Y4_S2_every_week_D1_P6
+MATH_GW06,MATH_GW06,gateway,Ws,workshop,4,2,Wed,1,10:00-11:00,every_week,Y4_S2_every_week_D2_P1
+MATH_GW06,MATH_GW06,gateway,fws,workshop,4,2,Mon,0,9:00-10:00,even_weeks,Y4_S2_even_weeks_D0_P0
+MATH_GW06,MATH_GW06,gateway,fws,workshop,4,2,Wed,4,13:00-14:00,even_weeks,Y4_S2_even_weeks_D2_P4
+MATH_GW06,MATH_GW06,gateway,fws,workshop,4,2,Fri,7,16:00-17:00,even_weeks,Y4_S2_even_weeks_D4_P7
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,4,2,Mon,3,12:00-13:00,every_week,Y4_S2_every_week_D0_P3
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,4,2,Tue,3,12:00-13:00,every_week,Y4_S2_every_week_D1_P3
+MATH_GW07,MATH_GW07,gateway,Lec,lecture,4,2,Fri,5,14:00-15:00,every_week,Y4_S2_every_week_D4_P5
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,4,2,Mon,5,14:00-15:00,every_week,Y4_S2_every_week_D0_P5
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,4,2,Wed,4,13:00-14:00,every_week,Y4_S2_every_week_D2_P4
+MATH_GW07,MATH_GW07,gateway,Ws,workshop,4,2,Thu,4,13:00-14:00,every_week,Y4_S2_every_week_D3_P4
+MATH_GW07,MATH_GW07,gateway,fws,workshop,4,2,Tue,1,10:00-11:00,even_weeks,Y4_S2_even_weeks_D1_P1
+MATH_GW07,MATH_GW07,gateway,fws,workshop,4,2,Thu,3,12:00-13:00,even_weeks,Y4_S2_even_weeks_D3_P3
+MATH_GW07,MATH_GW07,gateway,fws,workshop,4,2,Fri,4,13:00-14:00,even_weeks,Y4_S2_even_weeks_D4_P4
+MATH_OP04,MATH_OP04,optional,Lec,lecture,4,2,Mon,4,13:00-14:00,every_week,Y4_S2_every_week_D0_P4
+MATH_OP04,MATH_OP04,optional,Lec,lecture,4,2,Thu,8,17:00-18:00,every_week,Y4_S2_every_week_D3_P8
+MATH_OP04,MATH_OP04,optional,Lec,lecture,4,2,Fri,8,17:00-18:00,every_week,Y4_S2_every_week_D4_P8
+MATH_OP04,MATH_OP04,optional,Ws,workshop,4,2,Thu,5,14:00-15:00,every_week,Y4_S2_every_week_D3_P5
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,4,2,Mon,8,17:00-18:00,every_week,Y4_S2_every_week_D0_P8
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,4,2,Tue,5,14:00-15:00,every_week,Y4_S2_every_week_D1_P5
+MATH_GW08,MATH_GW08,gateway,Lec,lecture,4,2,Fri,6,15:00-16:00,every_week,Y4_S2_every_week_D4_P6
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,4,2,Mon,2,11:00-12:00,every_week,Y4_S2_every_week_D0_P2
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,4,2,Tue,2,11:00-12:00,every_week,Y4_S2_every_week_D1_P2
+MATH_GW08,MATH_GW08,gateway,Ws,workshop,4,2,Fri,3,12:00-13:00,every_week,Y4_S2_every_week_D4_P3
+MATH_GW08,MATH_GW08,gateway,fws,workshop,4,2,Wed,2,11:00-12:00,even_weeks,Y4_S2_even_weeks_D2_P2
+MATH_GW08,MATH_GW08,gateway,fws,workshop,4,2,Wed,3,12:00-13:00,even_weeks,Y4_S2_even_weeks_D2_P3
+MATH_GW08,MATH_GW08,gateway,fws,workshop,4,2,Thu,3,12:00-13:00,even_weeks,Y4_S2_even_weeks_D3_P3
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,Lec,lecture,4,2,Mon,0,9:00-10:00,every_week,Y4_S2_every_week_D0_P0
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,Lec,lecture,4,2,Tue,2,11:00-12:00,every_week,Y4_S2_every_week_D1_P2
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,Lec,lecture,4,2,Wed,6,15:00-16:00,every_week,Y4_S2_every_week_D2_P6
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,Ws,workshop,4,2,Thu,4,13:00-14:00,every_week,Y4_S2_every_week_D3_P4
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,fws,workshop,4,2,Fri,7,16:00-17:00,even_weeks,Y4_S2_even_weeks_D4_P7
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,Lec,lecture,4,2,Tue,0,9:00-10:00,every_week,Y4_S2_every_week_D1_P0
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,Lec,lecture,4,2,Wed,3,12:00-13:00,every_week,Y4_S2_every_week_D2_P3
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,Lec,lecture,4,2,Thu,8,17:00-18:00,every_week,Y4_S2_every_week_D3_P8
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,Ws,workshop,4,2,Thu,1,10:00-11:00,every_week,Y4_S2_every_week_D3_P1
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,fws,workshop,4,2,Mon,5,14:00-15:00,even_weeks,Y4_S2_even_weeks_D0_P5
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,Lec,lecture,4,2,Mon,6,15:00-16:00,every_week,Y4_S2_every_week_D0_P6
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,Lec,lecture,4,2,Thu,0,9:00-10:00,every_week,Y4_S2_every_week_D3_P0
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,Lec,lecture,4,2,Fri,2,11:00-12:00,every_week,Y4_S2_every_week_D4_P2
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,Ws,workshop,4,2,Tue,4,13:00-14:00,every_week,Y4_S2_every_week_D1_P4
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,fws,workshop,4,2,Wed,7,16:00-17:00,even_weeks,Y4_S2_even_weeks_D2_P7
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,Lec,lecture,4,2,Mon,3,12:00-13:00,every_week,Y4_S2_every_week_D0_P3
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,Lec,lecture,4,2,Tue,8,17:00-18:00,every_week,Y4_S2_every_week_D1_P8
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,Lec,lecture,4,2,Fri,0,9:00-10:00,every_week,Y4_S2_every_week_D4_P0
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,Ws,workshop,4,2,Tue,1,10:00-11:00,every_week,Y4_S2_every_week_D1_P1
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,fws,workshop,4,2,Thu,5,14:00-15:00,even_weeks,Y4_S2_even_weeks_D3_P5

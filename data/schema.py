@@ -4,8 +4,8 @@ from typing import Optional
 
 
 class CourseKind(str, Enum):
-    GATEWAY = "gateway"
-    OPTIONAL = "optional"
+    MATH_GW = "gateway"
+    MATH_OP = "optional"
     OUTSIDE = "outside"
 
 
@@ -69,6 +69,7 @@ class CourseComponent:
 
     allowed_days: Optional[set[int]] = None
     allowed_periods: Optional[set[int]] = None
+    allowed_timeslots: Optional[set[tuple[int, int]]] = None
     sections_min: int = 1
     sections_max: int = 1
     section_cap_min: int = 0
@@ -151,7 +152,22 @@ class DegreeRules:
     global_gateway_per_semester: int = 4
     global_optional_per_semester: int = 2
     student_max_daily_gap: int = 999
+    student_max_slots_per_day: int = 999
     course_max_slots_per_day: int = 999
+    lecture_max_per_day: int = 999
+    workshop_max_per_day: int = 999
+    workshop_after_lecture: bool = False
+    max_concurrent_courses_per_timeslot: int = 999
+    lunch_break_no_class: bool = False
+    student_max_consecutive_slots: int = 999
+    no_first_period_prefixes: tuple = ()
+    no_friday_afternoon_prefixes: tuple = ()
+    ws_weekly_fortnightly_no_overlap: bool = False
+    max_same_type_ws_per_timeslot: int = 999
+    extended_lunch_days: frozenset = frozenset()
+    extended_lunch_periods: frozenset = frozenset()
+    no_first_period_days: frozenset = frozenset()
+    same_day_lectures_consecutive: bool = False
 
     def for_student(self, s: Student):
         if s.programme not in self.by_type:
@@ -183,9 +199,9 @@ class Instance:
         object.__setattr__(self, '_course_ids',
             [c.id for c in self.courses])
         object.__setattr__(self, '_gateway_course_ids',
-            [c.id for c in self.courses if c.kind == CourseKind.GATEWAY])
+            [c.id for c in self.courses if c.kind == CourseKind.MATH_GW])
         object.__setattr__(self, '_optional_course_ids',
-            [c.id for c in self.courses if c.kind == CourseKind.OPTIONAL])
+            [c.id for c in self.courses if c.kind == CourseKind.MATH_OP])
         object.__setattr__(self, '_outside_course_ids',
             [c.id for c in self.courses if c.kind == CourseKind.OUTSIDE])
 
@@ -271,7 +287,33 @@ class Instance:
         c_forb  = course.forbidden_timeslot_ids
         cp_days = comp.allowed_days
         cp_pers = comp.allowed_periods
+        cp_ts   = comp.allowed_timeslots
         wp      = comp.week_pattern
+
+        # Compute lunch-break forbidden periods (if enabled).
+        # Only apply to non-outside courses — outside courses have fixed
+        # schedules from other departments that we cannot move.
+        lunch_periods = set()
+        if self.rules.lunch_break_no_class and course.kind != CourseKind.OUTSIDE:
+            lunch_start = 12 * 60   # 12:00
+            lunch_end   = 13 * 60   # 13:00
+            max_period = (18 * 60 - self.slot_start_minutes) // self.slot_duration_minutes
+            for p in range(max_period):
+                p_start = self.slot_start_minutes + p * self.slot_duration_minutes
+                p_end   = p_start + self.slot_duration_minutes
+                if p_start < lunch_end and p_end > lunch_start:
+                    lunch_periods.add(p)
+
+        # Prefix-based period restrictions (applied at variable creation to
+        # keep the model small and avoid post-hoc zero-forcing).
+        no_first_period = bool(
+            self.rules.no_first_period_prefixes
+            and course.id.startswith(self.rules.no_first_period_prefixes)
+        )
+        no_fri_afternoon = bool(
+            self.rules.no_friday_afternoon_prefixes
+            and course.id.startswith(self.rules.no_friday_afternoon_prefixes)
+        )
 
         result = []
         for k in self.timeslot_keys_list:
@@ -283,10 +325,31 @@ class Instance:
                 continue
             if c_forb is not None and k.id in c_forb:
                 continue
-            if cp_days is not None and k.day not in cp_days:
+            if k.period in lunch_periods:
                 continue
-            if cp_pers is not None and k.period not in cp_pers:
+            if no_first_period and k.period == 0:
                 continue
+            if (self.rules.no_first_period_days
+                    and course.kind != CourseKind.OUTSIDE
+                    and k.period == 0
+                    and k.day in self.rules.no_first_period_days):
+                continue
+            if no_fri_afternoon and k.day == 4 and k.period >= 4:
+                continue
+            if (self.rules.extended_lunch_days
+                    and course.kind != CourseKind.OUTSIDE
+                    and k.day in self.rules.extended_lunch_days
+                    and k.period in self.rules.extended_lunch_periods):
+                continue
+            # allowed_timeslots takes precedence over allowed_days/periods
+            if cp_ts is not None:
+                if (k.day, k.period) not in cp_ts:
+                    continue
+            else:
+                if cp_days is not None and k.day not in cp_days:
+                    continue
+                if cp_pers is not None and k.period not in cp_pers:
+                    continue
             result.append(k)
 
         return result
@@ -375,25 +438,35 @@ class Instance:
                         f"(active semesters: {active_semesters})")
 
             for comp in c.components:
-                # Check component allowed_days within active days
-                if comp.allowed_days is not None:
-                    bad = comp.allowed_days - day_set
+                # Check component allowed_timeslots within active day-period pairs
+                if comp.allowed_timeslots is not None:
+                    active_pairs = {(k.day, k.period) for k in self.timeslot_keys_list}
+                    bad = comp.allowed_timeslots - active_pairs
                     if bad:
                         raise ValueError(
-                            f"Course {c.id} component {comp.id}: allowed_days "
-                            f"{sorted(comp.allowed_days)} references day(s) "
-                            f"{sorted(bad)} not in timeslot_config "
-                            f"(active_days: {active_days})")
+                            f"Course {c.id} component {comp.id}: allowed_timeslots "
+                            f"references day:period pair(s) {sorted(bad)} not in "
+                            f"timeslot_config")
+                else:
+                    # Check component allowed_days within active days
+                    if comp.allowed_days is not None:
+                        bad = comp.allowed_days - day_set
+                        if bad:
+                            raise ValueError(
+                                f"Course {c.id} component {comp.id}: allowed_days "
+                                f"{sorted(comp.allowed_days)} references day(s) "
+                                f"{sorted(bad)} not in timeslot_config "
+                                f"(active_days: {active_days})")
 
-                # Check component allowed_periods within active periods
-                if comp.allowed_periods is not None:
-                    bad = comp.allowed_periods - period_set
-                    if bad:
-                        raise ValueError(
-                            f"Course {c.id} component {comp.id}: allowed_periods "
-                            f"{sorted(comp.allowed_periods)} references period(s) "
-                            f"{sorted(bad)} not in timeslot_config "
-                            f"(active_periods: {active_periods})")
+                    # Check component allowed_periods within active periods
+                    if comp.allowed_periods is not None:
+                        bad = comp.allowed_periods - period_set
+                        if bad:
+                            raise ValueError(
+                                f"Course {c.id} component {comp.id}: allowed_periods "
+                                f"{sorted(comp.allowed_periods)} references period(s) "
+                                f"{sorted(bad)} not in timeslot_config "
+                                f"(active_periods: {active_periods})")
 
                 # Check that the component actually has at least one timeslot key
                 keys = self.allowed_timeslot_keys_for_component(c.id, comp.id)
@@ -403,7 +476,8 @@ class Instance:
                         f"({comp.component_type.value}, {comp.frequency.value}, "
                         f"wp={comp.week_pattern.value}): "
                         f"0 timeslot keys after filtering — the component is "
-                        f"unschedulable. Check allowed_days={comp.allowed_days}, "
+                        f"unschedulable. Check allowed_timeslots={comp.allowed_timeslots}, "
+                        f"allowed_days={comp.allowed_days}, "
                         f"allowed_periods={comp.allowed_periods}, "
                         f"course allowed_years={c.allowed_years}, "
                         f"allowed_semesters={c.allowed_semesters}, "
@@ -497,11 +571,11 @@ class Instance:
                         f"Rule {prog}: balanced_credits=True but total_credits_per_year="
                         f"{rule.total_credits_per_year} is not divisible by {num_sems} semesters")
 
-            avail_gw = [c for c in self.courses if c.kind == CourseKind.GATEWAY]
+            avail_gw = [c for c in self.courses if c.kind == CourseKind.MATH_GW]
             if rule.allowed_gateway_ids is not None:
                 avail_gw = [c for c in avail_gw if c.id in rule.allowed_gateway_ids]
 
-            avail_opt = [c for c in self.courses if c.kind == CourseKind.OPTIONAL]
+            avail_opt = [c for c in self.courses if c.kind == CourseKind.MATH_OP]
             if rule.allowed_optional_ids is not None:
                 avail_opt = [c for c in avail_opt if c.id in rule.allowed_optional_ids]
 
@@ -579,8 +653,8 @@ class Instance:
         opt_per_sem = self.rules.global_optional_per_semester
         num_sems = len(self.all_semesters)
 
-        gw_courses = [c for c in self.courses if c.kind == CourseKind.GATEWAY]
-        opt_courses = [c for c in self.courses if c.kind == CourseKind.OPTIONAL]
+        gw_courses = [c for c in self.courses if c.kind == CourseKind.MATH_GW]
+        opt_courses = [c for c in self.courses if c.kind == CourseKind.MATH_OP]
 
         # Global check: total courses must be enough to fill all semesters
         # (each course used at most once across semesters due to C1)
@@ -624,13 +698,13 @@ class Instance:
                 if c is None:
                     continue
 
-                if c.kind == CourseKind.GATEWAY and rule.allowed_gateway_ids is not None:
+                if c.kind == CourseKind.MATH_GW and rule.allowed_gateway_ids is not None:
                     if cid not in rule.allowed_gateway_ids:
                         raise ValueError(
                             f"Student {s.id}: compulsory gateway course {cid} not in "
                             f"allowed_gateway_ids for programme {s.programme}")
                     
-                if c.kind == CourseKind.OPTIONAL and rule.allowed_optional_ids is not None:
+                if c.kind == CourseKind.MATH_OP and rule.allowed_optional_ids is not None:
                     if cid not in rule.allowed_optional_ids:
                         raise ValueError(
                             f"Student {s.id}: compulsory optional course {cid} not in "
@@ -651,9 +725,9 @@ class Instance:
             s_sems = self.semesters_for_student(s)
             avail_for_student = []
             for c in self.courses:
-                if c.kind == CourseKind.GATEWAY and rule.allowed_gateway_ids is not None and c.id not in rule.allowed_gateway_ids:
+                if c.kind == CourseKind.MATH_GW and rule.allowed_gateway_ids is not None and c.id not in rule.allowed_gateway_ids:
                     continue
-                if c.kind == CourseKind.OPTIONAL and rule.allowed_optional_ids is not None and c.id not in rule.allowed_optional_ids:
+                if c.kind == CourseKind.MATH_OP and rule.allowed_optional_ids is not None and c.id not in rule.allowed_optional_ids:
                     continue
                 if c.kind == CourseKind.OUTSIDE:
                     if s.programme == ProgrammeKind.SINGLE:

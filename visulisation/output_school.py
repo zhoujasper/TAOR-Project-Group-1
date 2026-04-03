@@ -11,7 +11,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # Config
 # -----------------------------
 
-FILE_DIR = "run_demo_baseline_2026_03_03_19_36_03"
+FILE_DIR = "run_report_v8_2026_03_29_14_50_11"
 
 CSV_PATH = f"output/{FILE_DIR}/timetable.csv"
 YEAR = 3
@@ -44,6 +44,16 @@ def text_color_for_facecolor(rgba):
     r, g, b, a = rgba
     lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
     return "black" if lum > 0.60 else "white"
+
+
+def set_alpha(rgba, alpha):
+    """Return a copy of *rgba* with the alpha channel replaced."""
+    r, g, b, _ = rgba
+    return (r, g, b, alpha)
+
+
+LEC_ALPHA = 0.92
+WS_ALPHA  = 0.45
 
 
 def build_color_map(course_ids):
@@ -121,24 +131,31 @@ def draw_semester(sub: pd.DataFrame, semester: int, course_color: dict, out_png:
         rect_h = duration * (1 - 2 * pad_y)
 
         cid = str(r["course_id"])
-        face = course_color.get(cid, (0.4, 0.4, 0.4, 1.0))
+        base = course_color.get(cid, (0.4, 0.4, 0.4, 1.0))
 
-        # Hatch for even weeks
-        hatch = "///" if str(r["week_pattern"]) == "even_weeks" else None
+        is_ws = str(r["component_id"]).lower() in ("ws", "fws")
+        is_biweekly = str(r["week_pattern"]) in ("even_weeks", "odd_weeks")
+
+        face = set_alpha(base, WS_ALPHA if is_ws else LEC_ALPHA)
+        hatch = "\\\\\\" if is_biweekly else None
+        ls = "--" if is_ws else "-"
+        lw = 1.4 if is_ws else 0.7
+        ec = (0.2, 0.2, 0.2, 0.8) if is_ws else (0.4, 0.4, 0.4, 0.6)
 
         rect = patches.Rectangle(
             (rect_x, rect_y),
             rect_w,
             rect_h,
-            linewidth=1.2,
-            edgecolor="white",
+            linewidth=lw,
+            linestyle=ls,
+            edgecolor=ec,
             facecolor=face,
             hatch=hatch,
         )
         ax.add_patch(rect)
 
-        # Text
-        label = f'{r["course_id"]}\n{r["component_id"]} · {r["week_label"]}'
+        label = f'{r["course_id"]}\n{r["component_id"]}\n{r["week_label"]}'
+        fs = max(4.5, min(8.5, 20 * rect_w, 12 * rect_h))
         tc = text_color_for_facecolor(face)
         ax.text(
             rect_x + rect_w / 2,
@@ -146,9 +163,9 @@ def draw_semester(sub: pd.DataFrame, semester: int, course_color: dict, out_png:
             label,
             ha="center",
             va="center",
-            fontsize=8.5,
+            fontsize=fs,
             color=tc,
-            wrap=True,
+            clip_on=True,
         )
 
     # Title
@@ -172,8 +189,12 @@ def draw_semester(sub: pd.DataFrame, semester: int, course_color: dict, out_png:
         handles.append(patches.Patch(facecolor=course_color[cid], edgecolor="none"))
         labels.append(f"{cid} — {name}")
 
-    handles.append(patches.Patch(facecolor="white", edgecolor="black", hatch="///"))
-    labels.append("Even weeks (hatched)")
+    handles.append(patches.Patch(facecolor=(0.4, 0.55, 0.75, LEC_ALPHA), edgecolor=(0.4, 0.4, 0.4, 0.6), linewidth=0.7))
+    labels.append("Lecture (solid border)")
+    handles.append(patches.Patch(facecolor=(0.4, 0.55, 0.75, WS_ALPHA), edgecolor=(0.2, 0.2, 0.2, 0.8), linewidth=1.4, linestyle="--"))
+    labels.append("Workshop (dashed border)")
+    handles.append(patches.Patch(facecolor="white", edgecolor=(0.4, 0.4, 0.4, 0.6), hatch="\\\\\\"))
+    labels.append("Biweekly (hatched)")
 
     ax.legend(
         handles,
@@ -195,6 +216,59 @@ def draw_semester(sub: pd.DataFrame, semester: int, course_color: dict, out_png:
     return fig
 
 
+def export_group_timetable(sub: pd.DataFrame, group_label: str):
+    """
+    Export semester PNGs + combined PDF for a filtered group.
+    """
+    if sub.empty:
+        print(f"No data for {group_label}, skipping.")
+        return
+
+    out_png_s1 = f"{OUT_DIR}/year{YEAR}_{group_label}_sem1.png"
+    out_png_s2 = f"{OUT_DIR}/year{YEAR}_{group_label}_sem2.png"
+    out_pdf_all = f"{OUT_DIR}/year{YEAR}_{group_label}_sem1_sem2.pdf"
+
+    # Keep Mon-Fri only
+    sub = sub[sub["day"].isin(DAY_ORDER)].copy()
+    if sub.empty:
+        print(f"No Mon-Fri data for {group_label}, skipping.")
+        return
+
+    # Time parsing
+    sub[["start_h", "end_h"]] = sub["time"].apply(lambda s: pd.Series(parse_time_range(s)))
+
+    # Week pattern labels (English)
+    week_label = {
+        "every_week": "Weekly",
+        "even_weeks": "Even weeks",
+        "odd_weeks": "Odd weeks",
+    }
+    sub["week_label"] = sub["week_pattern"].map(week_label).fillna(sub["week_pattern"].astype(str))
+
+    # Stable color mapping across both semesters
+    course_color = build_color_map(sub["course_id"].unique())
+
+    # Draw two semesters
+    s1 = sub[sub["semester"] == 1].copy()
+    s2 = sub[sub["semester"] == 2].copy()
+
+    fig1 = draw_semester(s1, 1, course_color, out_png_s1)
+    fig2 = draw_semester(s2, 2, course_color, out_png_s2)
+
+    # Export combined PDF
+    with PdfPages(out_pdf_all) as pdf:
+        pdf.savefig(fig1)
+        pdf.savefig(fig2)
+
+    plt.close(fig1)
+    plt.close(fig2)
+
+    print(f"Saved ({group_label}):")
+    print(" -", out_png_s1)
+    print(" -", out_png_s2)
+    print(" -", out_pdf_all)
+
+
 # -----------------------------
 # Main
 # -----------------------------
@@ -203,58 +277,25 @@ def main():
 
     df = pd.read_csv(CSV_PATH)
 
+    # All-in-One: all configured prefixes in one combined timetable
+    prefix_mask = df["course_id"].astype(str).str.startswith(tuple(COURSE_PREFIX))
+    sub_all = df[(df["year"] == YEAR) & prefix_mask].copy()
+    export_group_timetable(sub_all, "ALL_IN_ONE")
+
+    # Non-MATH combined timetable
+    non_math_prefixes = [p for p in COURSE_PREFIX if p != "MATH"]
+    if non_math_prefixes:
+        non_math_mask = df["course_id"].astype(str).str.startswith(tuple(non_math_prefixes))
+        sub_non_math = df[(df["year"] == YEAR) & non_math_mask].copy()
+        export_group_timetable(sub_non_math, "NON_MATH")
+
     for col in COURSE_PREFIX:
         # Filter: target year + course prefix
         sub = df[
             (df["year"] == YEAR)
             & (df["course_id"].astype(str).str.startswith(col))
         ].copy()
-
-        if sub.empty:
-            print(f"No data for prefix {col}, skipping.")
-            continue
-
-        # Per-prefix output paths
-        out_png_s1 = f"{OUT_DIR}/year{YEAR}_{col}_sem1.png"
-        out_png_s2 = f"{OUT_DIR}/year{YEAR}_{col}_sem2.png"
-        out_pdf_all = f"{OUT_DIR}/year{YEAR}_{col}_sem1_sem2.pdf"
-
-        # Keep Mon-Fri only
-        sub = sub[sub["day"].isin(DAY_ORDER)].copy()
-
-        # Time parsing
-        sub[["start_h", "end_h"]] = sub["time"].apply(lambda s: pd.Series(parse_time_range(s)))
-
-        # Week pattern labels (English)
-        week_label = {
-            "every_week": "Weekly",
-            "even_weeks": "Even weeks",
-            "odd_weeks": "Odd weeks",
-        }
-        sub["week_label"] = sub["week_pattern"].map(week_label).fillna(sub["week_pattern"].astype(str))
-
-        # Stable color mapping across both semesters
-        course_color = build_color_map(sub["course_id"].unique())
-
-        # Draw two semesters
-        s1 = sub[sub["semester"] == 1].copy()
-        s2 = sub[sub["semester"] == 2].copy()
-
-        fig1 = draw_semester(s1, 1, course_color, out_png_s1)
-        fig2 = draw_semester(s2, 2, course_color, out_png_s2)
-
-        # Export combined PDF
-        with PdfPages(out_pdf_all) as pdf:
-            pdf.savefig(fig1)
-            pdf.savefig(fig2)
-
-        plt.close(fig1)
-        plt.close(fig2)
-
-        print(f"Saved ({col}):")
-        print(" -", out_png_s1)
-        print(" -", out_png_s2)
-        print(" -", out_pdf_all)
+        export_group_timetable(sub, col)
 
 
 if __name__ == "__main__":

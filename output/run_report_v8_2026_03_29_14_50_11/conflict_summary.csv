@@ -1,0 +1,8 @@
+programme,students,total_conflicts,lecture_lecture,lecture_workshop,workshop_workshop,mean_per_student,median_per_student,students_with_conflicts,pct_with_conflicts
+joint_bus,55,139,58,75,6,2.53,3.0,52,94.5%
+joint_cs,55,46,15,3,28,0.84,1.0,37,67.3%
+joint_econ,55,127,38,82,7,2.31,2.0,52,94.5%
+joint_phil,55,24,15,9,0,0.44,0.0,18,32.7%
+joint_phys,55,77,43,34,0,1.40,1.0,43,78.2%
+single,200,284,200,84,0,1.42,1.0,200,100.0%
+ALL,475,697,369,287,41,1.47,1.0,402,84.6%

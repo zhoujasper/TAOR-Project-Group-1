@@ -1,0 +1,5 @@
+- 原来的 `real_data` 来的
+- 不考虑capacity
+- 8 gateway + 4 optional
+- 2 门课/year/semester/joint
+- 外院课定死

@@ -1,0 +1,215 @@
+course_id,course_name,course_kind,credits,year,semester,programme,students_enrolled
+MATH_GW01,MATH_GW01,gateway,20,3,1,ALL,285
+MATH_GW01,MATH_GW01,gateway,20,3,1,joint_bus,20
+MATH_GW01,MATH_GW01,gateway,20,3,1,joint_cs,30
+MATH_GW01,MATH_GW01,gateway,20,3,1,joint_econ,20
+MATH_GW01,MATH_GW01,gateway,20,3,1,joint_phys,15
+MATH_GW01,MATH_GW01,gateway,20,3,1,single,200
+MATH_GW01,MATH_GW01,gateway,20,4,1,ALL,100
+MATH_GW01,MATH_GW01,gateway,20,4,1,joint_bus,15
+MATH_GW01,MATH_GW01,gateway,20,4,1,joint_cs,5
+MATH_GW01,MATH_GW01,gateway,20,4,1,joint_econ,15
+MATH_GW01,MATH_GW01,gateway,20,4,1,joint_phil,45
+MATH_GW01,MATH_GW01,gateway,20,4,1,joint_phys,20
+MATH_GW02,MATH_GW02,gateway,20,3,1,ALL,285
+MATH_GW02,MATH_GW02,gateway,20,3,1,joint_bus,30
+MATH_GW02,MATH_GW02,gateway,20,3,1,joint_cs,5
+MATH_GW02,MATH_GW02,gateway,20,3,1,joint_econ,5
+MATH_GW02,MATH_GW02,gateway,20,3,1,joint_phil,30
+MATH_GW02,MATH_GW02,gateway,20,3,1,joint_phys,15
+MATH_GW02,MATH_GW02,gateway,20,3,1,single,200
+MATH_GW02,MATH_GW02,gateway,20,4,1,ALL,115
+MATH_GW02,MATH_GW02,gateway,20,4,1,joint_cs,50
+MATH_GW02,MATH_GW02,gateway,20,4,1,joint_econ,35
+MATH_GW02,MATH_GW02,gateway,20,4,1,joint_phys,30
+MATH_GW03,MATH_GW03,gateway,20,3,1,ALL,105
+MATH_GW03,MATH_GW03,gateway,20,3,1,joint_bus,25
+MATH_GW03,MATH_GW03,gateway,20,3,1,joint_cs,30
+MATH_GW03,MATH_GW03,gateway,20,3,1,joint_econ,10
+MATH_GW03,MATH_GW03,gateway,20,3,1,joint_phil,10
+MATH_GW03,MATH_GW03,gateway,20,3,1,joint_phys,30
+MATH_GW03,MATH_GW03,gateway,20,4,1,ALL,250
+MATH_GW03,MATH_GW03,gateway,20,4,1,joint_bus,5
+MATH_GW03,MATH_GW03,gateway,20,4,1,joint_econ,20
+MATH_GW03,MATH_GW03,gateway,20,4,1,joint_phil,10
+MATH_GW03,MATH_GW03,gateway,20,4,1,joint_phys,15
+MATH_GW03,MATH_GW03,gateway,20,4,1,single,200
+MATH_GW04,MATH_GW04,gateway,20,3,1,ALL,110
+MATH_GW04,MATH_GW04,gateway,20,3,1,joint_cs,25
+MATH_GW04,MATH_GW04,gateway,20,3,1,joint_econ,40
+MATH_GW04,MATH_GW04,gateway,20,3,1,joint_phil,25
+MATH_GW04,MATH_GW04,gateway,20,3,1,joint_phys,20
+MATH_GW04,MATH_GW04,gateway,20,4,1,ALL,280
+MATH_GW04,MATH_GW04,gateway,20,4,1,joint_bus,55
+MATH_GW04,MATH_GW04,gateway,20,4,1,joint_cs,5
+MATH_GW04,MATH_GW04,gateway,20,4,1,joint_phil,5
+MATH_GW04,MATH_GW04,gateway,20,4,1,joint_phys,15
+MATH_GW04,MATH_GW04,gateway,20,4,1,single,200
+MATH_GW05,MATH_GW05,gateway,20,3,2,ALL,65
+MATH_GW05,MATH_GW05,gateway,20,3,2,joint_bus,15
+MATH_GW05,MATH_GW05,gateway,20,3,2,joint_cs,15
+MATH_GW05,MATH_GW05,gateway,20,3,2,joint_econ,10
+MATH_GW05,MATH_GW05,gateway,20,3,2,joint_phil,15
+MATH_GW05,MATH_GW05,gateway,20,3,2,joint_phys,10
+MATH_GW05,MATH_GW05,gateway,20,4,2,ALL,285
+MATH_GW05,MATH_GW05,gateway,20,4,2,joint_bus,5
+MATH_GW05,MATH_GW05,gateway,20,4,2,joint_cs,5
+MATH_GW05,MATH_GW05,gateway,20,4,2,joint_econ,35
+MATH_GW05,MATH_GW05,gateway,20,4,2,joint_phil,25
+MATH_GW05,MATH_GW05,gateway,20,4,2,joint_phys,15
+MATH_GW05,MATH_GW05,gateway,20,4,2,single,200
+MATH_GW06,MATH_GW06,gateway,20,3,2,ALL,45
+MATH_GW06,MATH_GW06,gateway,20,3,2,joint_bus,5
+MATH_GW06,MATH_GW06,gateway,20,3,2,joint_econ,10
+MATH_GW06,MATH_GW06,gateway,20,3,2,joint_phil,15
+MATH_GW06,MATH_GW06,gateway,20,3,2,joint_phys,15
+MATH_GW06,MATH_GW06,gateway,20,4,2,ALL,325
+MATH_GW06,MATH_GW06,gateway,20,4,2,joint_bus,25
+MATH_GW06,MATH_GW06,gateway,20,4,2,joint_cs,35
+MATH_GW06,MATH_GW06,gateway,20,4,2,joint_econ,25
+MATH_GW06,MATH_GW06,gateway,20,4,2,joint_phil,15
+MATH_GW06,MATH_GW06,gateway,20,4,2,joint_phys,25
+MATH_GW06,MATH_GW06,gateway,20,4,2,single,200
+MATH_GW07,MATH_GW07,gateway,20,3,2,ALL,330
+MATH_GW07,MATH_GW07,gateway,20,3,2,joint_bus,15
+MATH_GW07,MATH_GW07,gateway,20,3,2,joint_cs,55
+MATH_GW07,MATH_GW07,gateway,20,3,2,joint_econ,20
+MATH_GW07,MATH_GW07,gateway,20,3,2,joint_phil,10
+MATH_GW07,MATH_GW07,gateway,20,3,2,joint_phys,30
+MATH_GW07,MATH_GW07,gateway,20,3,2,single,200
+MATH_GW07,MATH_GW07,gateway,20,4,2,ALL,50
+MATH_GW07,MATH_GW07,gateway,20,4,2,joint_bus,10
+MATH_GW07,MATH_GW07,gateway,20,4,2,joint_econ,15
+MATH_GW07,MATH_GW07,gateway,20,4,2,joint_phil,15
+MATH_GW07,MATH_GW07,gateway,20,4,2,joint_phys,10
+MATH_GW08,MATH_GW08,gateway,20,3,2,ALL,250
+MATH_GW08,MATH_GW08,gateway,20,3,2,joint_bus,15
+MATH_GW08,MATH_GW08,gateway,20,3,2,joint_cs,15
+MATH_GW08,MATH_GW08,gateway,20,3,2,joint_econ,20
+MATH_GW08,MATH_GW08,gateway,20,3,2,single,200
+MATH_GW08,MATH_GW08,gateway,20,4,2,ALL,100
+MATH_GW08,MATH_GW08,gateway,20,4,2,joint_bus,15
+MATH_GW08,MATH_GW08,gateway,20,4,2,joint_cs,15
+MATH_GW08,MATH_GW08,gateway,20,4,2,joint_econ,20
+MATH_GW08,MATH_GW08,gateway,20,4,2,joint_phil,20
+MATH_GW08,MATH_GW08,gateway,20,4,2,joint_phys,30
+MATH_OP01,MATH_OP01,optional,20,3,1,ALL,235
+MATH_OP01,MATH_OP01,optional,20,3,1,joint_bus,15
+MATH_OP01,MATH_OP01,optional,20,3,1,joint_cs,10
+MATH_OP01,MATH_OP01,optional,20,3,1,joint_phil,10
+MATH_OP01,MATH_OP01,optional,20,3,1,single,200
+MATH_OP01,MATH_OP01,optional,20,4,1,ALL,45
+MATH_OP01,MATH_OP01,optional,20,4,1,joint_cs,10
+MATH_OP01,MATH_OP01,optional,20,4,1,joint_econ,15
+MATH_OP01,MATH_OP01,optional,20,4,1,joint_phys,20
+MATH_OP02,MATH_OP02,optional,20,3,1,ALL,45
+MATH_OP02,MATH_OP02,optional,20,3,1,joint_bus,5
+MATH_OP02,MATH_OP02,optional,20,3,1,joint_econ,10
+MATH_OP02,MATH_OP02,optional,20,3,1,joint_phil,10
+MATH_OP02,MATH_OP02,optional,20,3,1,joint_phys,20
+MATH_OP02,MATH_OP02,optional,20,4,1,ALL,220
+MATH_OP02,MATH_OP02,optional,20,4,1,joint_econ,10
+MATH_OP02,MATH_OP02,optional,20,4,1,joint_phil,10
+MATH_OP02,MATH_OP02,optional,20,4,1,single,200
+MATH_OP03,MATH_OP03,optional,20,3,2,ALL,80
+MATH_OP03,MATH_OP03,optional,20,3,2,joint_bus,40
+MATH_OP03,MATH_OP03,optional,20,3,2,joint_econ,25
+MATH_OP03,MATH_OP03,optional,20,3,2,joint_phil,5
+MATH_OP03,MATH_OP03,optional,20,3,2,joint_phys,10
+MATH_OP03,MATH_OP03,optional,20,4,2,ALL,260
+MATH_OP03,MATH_OP03,optional,20,4,2,joint_bus,5
+MATH_OP03,MATH_OP03,optional,20,4,2,joint_cs,35
+MATH_OP03,MATH_OP03,optional,20,4,2,joint_econ,5
+MATH_OP03,MATH_OP03,optional,20,4,2,joint_phil,10
+MATH_OP03,MATH_OP03,optional,20,4,2,joint_phys,5
+MATH_OP03,MATH_OP03,optional,20,4,2,single,200
+MATH_OP04,MATH_OP04,optional,20,3,2,ALL,270
+MATH_OP04,MATH_OP04,optional,20,3,2,joint_bus,5
+MATH_OP04,MATH_OP04,optional,20,3,2,joint_econ,15
+MATH_OP04,MATH_OP04,optional,20,3,2,joint_phil,40
+MATH_OP04,MATH_OP04,optional,20,3,2,joint_phys,10
+MATH_OP04,MATH_OP04,optional,20,3,2,single,200
+MATH_OP04,MATH_OP04,optional,20,4,2,ALL,45
+MATH_OP04,MATH_OP04,optional,20,4,2,joint_bus,20
+MATH_OP04,MATH_OP04,optional,20,4,2,joint_phil,15
+MATH_OP04,MATH_OP04,optional,20,4,2,joint_phys,10
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,20,3,1,ALL,35
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,20,3,1,joint_phys,35
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,20,3,1,ALL,30
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,20,3,1,joint_phys,30
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,20,3,2,ALL,45
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,20,3,2,joint_phys,45
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,20,3,2,ALL,45
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,20,3,2,joint_phys,45
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,20,4,1,ALL,35
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,20,4,1,joint_phys,35
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,20,4,1,ALL,30
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,20,4,1,joint_phys,30
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,20,4,2,ALL,35
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,20,4,2,joint_phys,35
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,20,4,2,ALL,35
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,20,4,2,joint_phys,35
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,20,3,1,ALL,35
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,20,3,1,joint_econ,35
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,20,3,1,ALL,45
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,20,3,1,joint_econ,45
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,20,3,2,ALL,35
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,20,3,2,joint_econ,35
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,20,3,2,ALL,30
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,20,3,2,joint_econ,30
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,20,4,1,ALL,40
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,20,4,1,joint_econ,40
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,20,4,1,ALL,30
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,20,4,1,joint_econ,30
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,20,4,2,ALL,25
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,20,4,2,joint_econ,25
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,20,4,2,ALL,40
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,20,4,2,joint_econ,40
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,20,3,1,ALL,35
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,20,3,1,joint_bus,35
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,20,3,1,ALL,35
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,20,3,1,joint_bus,35
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,20,3,2,ALL,35
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,20,3,2,joint_bus,35
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,20,3,2,ALL,35
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,20,3,2,joint_bus,35
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,20,4,1,ALL,35
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,20,4,1,joint_bus,35
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,20,4,1,ALL,55
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,20,4,1,joint_bus,55
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,20,4,2,ALL,45
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,20,4,2,joint_bus,45
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,20,4,2,ALL,40
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,20,4,2,joint_bus,40
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,20,3,1,ALL,35
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,20,3,1,joint_cs,35
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,20,3,1,ALL,30
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,20,3,1,joint_cs,30
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,20,3,2,ALL,40
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,20,3,2,joint_cs,40
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,20,3,2,ALL,40
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,20,3,2,joint_cs,40
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,20,4,1,ALL,45
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,20,4,1,joint_cs,45
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,20,4,1,ALL,50
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,20,4,1,joint_cs,50
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,20,4,2,ALL,40
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,20,4,2,joint_cs,40
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,20,4,2,ALL,35
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,20,4,2,joint_cs,35
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,20,3,1,ALL,40
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,20,3,1,joint_phil,40
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,20,3,1,ALL,40
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,20,3,1,joint_phil,40
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,20,3,2,ALL,40
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,20,3,2,joint_phil,40
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,20,3,2,ALL,40
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,20,3,2,joint_phil,40
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,20,4,1,ALL,45
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,20,4,1,joint_phil,45
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,20,4,1,ALL,50
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,20,4,1,joint_phil,50
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,20,4,2,ALL,35
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,20,4,2,joint_phil,35
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,20,4,2,ALL,30
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,20,4,2,joint_phil,30

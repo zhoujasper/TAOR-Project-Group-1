@@ -5,6 +5,7 @@ Weighted combination (minimised):
   - Penalty : per-student per-base-slot timetable conflicts
               (lecture-lecture / lecture-workshop / workshop-workshop)
   - Penalty : each course activation (tie-breaking towards fewer activations)
+    - Penalty : overflow of concurrently opened classes in one actual timeslot
 """
 from collections import defaultdict
 from ortools.sat.python import cp_model
@@ -40,6 +41,19 @@ def add_objective(model: cp_model.CpModel, inst: Instance, vs: VarSets):
     # ── SMALL PENALTY: discourage unnecessary course activations ─────────
     for av in vs.active.values():
         penalties.append(cfg.activation_penalty * av)
+
+
+    # ── VERY SMALL PENALTY: too many concurrent classes in one slot ─────
+    add_concurrent_open_penalty(model, cfg, penalties, inst, vs)
+
+
+    # ── LATE SLOT PENALTY: discourage scheduling in late periods ──────────
+    if cfg.late_slot_penalty_weight > 0:
+        threshold = cfg.late_slot_start_period
+        for (cid, compid, kid), ov in vs.open.items():
+            k = key_by_id[kid]
+            if k.period >= threshold:
+                penalties.append(cfg.late_slot_penalty_weight * ov)
 
 
     # ── CONFLICT PENALTY ──────────────────────────────────────────────────
@@ -122,3 +136,33 @@ def add_conflict_penalty(model: cp_model.CpModel, cfg, penalties, sid, base, ent
 
             both = bool_and(model, att_i, att_j, f"cf[{sid},{base},{i},{j}]")
             penalties.append(sev * weight * both)
+
+
+def add_concurrent_open_penalty(model: cp_model.CpModel, cfg, penalties, inst: Instance,
+                                vs: VarSets):
+    """Penalise opening too many classes in the same actual timeslot.
+
+    This is a school-side room-pressure soft term. Odd/even-week slots are
+    treated separately because they do not compete for rooms in the same week.
+    """
+    soft_limit = cfg.concurrent_open_courses_soft_limit
+    penalty_weight = cfg.concurrent_open_courses_penalty
+
+    if soft_limit < 0 or penalty_weight <= 0:
+        return
+
+    open_by_kid = defaultdict(list)
+    for (_, _, kid), ov in vs.open.items():
+        open_by_kid[kid].append(ov)
+
+    for kid, slot_open_vars in open_by_kid.items():
+        if len(slot_open_vars) <= soft_limit:
+            continue
+
+        overflow = model.new_int_var(
+            0,
+            len(slot_open_vars) - soft_limit,
+            f"room_overflow[{kid}]"
+        )
+        model.add(overflow >= sum(slot_open_vars) - soft_limit)
+        penalties.append(penalty_weight * overflow)

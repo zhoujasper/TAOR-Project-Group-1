@@ -1,0 +1,211 @@
+course_id,course_name,course_kind,credits,year,semester,programme,students_enrolled
+MATH10066,Honours Differential Equations,gateway,20,3,1,ALL,272
+MATH10066,Honours Differential Equations,gateway,20,3,1,joint_bus,27
+MATH10066,Honours Differential Equations,gateway,20,3,1,joint_econ,6
+MATH10066,Honours Differential Equations,gateway,20,3,1,joint_phil,39
+MATH10066,Honours Differential Equations,gateway,20,3,1,single,200
+MATH10066,Honours Differential Equations,gateway,20,4,1,ALL,146
+MATH10066,Honours Differential Equations,gateway,20,4,1,joint_bus,8
+MATH10066,Honours Differential Equations,gateway,20,4,1,joint_cs,43
+MATH10066,Honours Differential Equations,gateway,20,4,1,joint_econ,32
+MATH10066,Honours Differential Equations,gateway,20,4,1,joint_phil,20
+MATH10066,Honours Differential Equations,gateway,20,4,1,joint_phys,43
+MATH10068,Honours Analysis,gateway,20,3,1,ALL,121
+MATH10068,Honours Analysis,gateway,20,3,1,joint_bus,10
+MATH10068,Honours Analysis,gateway,20,3,1,joint_econ,57
+MATH10068,Honours Analysis,gateway,20,3,1,joint_phil,16
+MATH10068,Honours Analysis,gateway,20,3,1,joint_phys,38
+MATH10068,Honours Analysis,gateway,20,4,1,ALL,274
+MATH10068,Honours Analysis,gateway,20,4,1,joint_bus,20
+MATH10068,Honours Analysis,gateway,20,4,1,joint_cs,40
+MATH10068,Honours Analysis,gateway,20,4,1,joint_phil,11
+MATH10068,Honours Analysis,gateway,20,4,1,joint_phys,3
+MATH10068,Honours Analysis,gateway,20,4,1,single,200
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,ALL,112
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,joint_bus,27
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,joint_cs,36
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,joint_econ,8
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,joint_phil,10
+MATH10072,Combinatorics and Graph Theory,gateway,20,3,1,joint_phys,31
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,ALL,290
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,joint_bus,5
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,joint_cs,8
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,joint_econ,25
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,joint_phil,44
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,joint_phys,8
+MATH10072,Combinatorics and Graph Theory,gateway,20,4,1,single,200
+MATH10082,Linear Analysis,gateway,20,3,1,ALL,289
+MATH10082,Linear Analysis,gateway,20,3,1,joint_cs,40
+MATH10082,Linear Analysis,gateway,20,3,1,joint_econ,8
+MATH10082,Linear Analysis,gateway,20,3,1,joint_phil,25
+MATH10082,Linear Analysis,gateway,20,3,1,joint_phys,16
+MATH10082,Linear Analysis,gateway,20,3,1,single,200
+MATH10082,Linear Analysis,gateway,20,4,1,ALL,89
+MATH10082,Linear Analysis,gateway,20,4,1,joint_bus,38
+MATH10082,Linear Analysis,gateway,20,4,1,joint_econ,24
+MATH10082,Linear Analysis,gateway,20,4,1,joint_phil,5
+MATH10082,Linear Analysis,gateway,20,4,1,joint_phys,22
+MATH10067,Honours Complex Variables,gateway,20,3,2,ALL,149
+MATH10067,Honours Complex Variables,gateway,20,3,2,joint_bus,16
+MATH10067,Honours Complex Variables,gateway,20,3,2,joint_cs,41
+MATH10067,Honours Complex Variables,gateway,20,3,2,joint_econ,27
+MATH10067,Honours Complex Variables,gateway,20,3,2,joint_phil,46
+MATH10067,Honours Complex Variables,gateway,20,3,2,joint_phys,19
+MATH10067,Honours Complex Variables,gateway,20,4,2,ALL,226
+MATH10067,Honours Complex Variables,gateway,20,4,2,joint_bus,11
+MATH10067,Honours Complex Variables,gateway,20,4,2,joint_cs,3
+MATH10067,Honours Complex Variables,gateway,20,4,2,joint_econ,6
+MATH10067,Honours Complex Variables,gateway,20,4,2,joint_phys,6
+MATH10067,Honours Complex Variables,gateway,20,4,2,single,200
+MATH10069,Honours Algebra,gateway,20,3,2,ALL,91
+MATH10069,Honours Algebra,gateway,20,3,2,joint_bus,8
+MATH10069,Honours Algebra,gateway,20,3,2,joint_econ,27
+MATH10069,Honours Algebra,gateway,20,3,2,joint_phil,24
+MATH10069,Honours Algebra,gateway,20,3,2,joint_phys,32
+MATH10069,Honours Algebra,gateway,20,4,2,ALL,271
+MATH10069,Honours Algebra,gateway,20,4,2,joint_bus,30
+MATH10069,Honours Algebra,gateway,20,4,2,joint_cs,35
+MATH10069,Honours Algebra,gateway,20,4,2,joint_phil,3
+MATH10069,Honours Algebra,gateway,20,4,2,joint_phys,3
+MATH10069,Honours Algebra,gateway,20,4,2,single,200
+MATH10071,Introduction to Number Theory,gateway,20,3,2,ALL,293
+MATH10071,Introduction to Number Theory,gateway,20,3,2,joint_bus,16
+MATH10071,Introduction to Number Theory,gateway,20,3,2,joint_cs,24
+MATH10071,Introduction to Number Theory,gateway,20,3,2,joint_econ,14
+MATH10071,Introduction to Number Theory,gateway,20,3,2,joint_phil,11
+MATH10071,Introduction to Number Theory,gateway,20,3,2,joint_phys,28
+MATH10071,Introduction to Number Theory,gateway,20,3,2,single,200
+MATH10071,Introduction to Number Theory,gateway,20,4,2,ALL,87
+MATH10071,Introduction to Number Theory,gateway,20,4,2,joint_bus,11
+MATH10071,Introduction to Number Theory,gateway,20,4,2,joint_cs,22
+MATH10071,Introduction to Number Theory,gateway,20,4,2,joint_econ,22
+MATH10071,Introduction to Number Theory,gateway,20,4,2,joint_phil,19
+MATH10071,Introduction to Number Theory,gateway,20,4,2,joint_phys,13
+MATH10101,Metric Spaces,gateway,20,3,2,ALL,268
+MATH10101,Metric Spaces,gateway,20,3,2,joint_bus,35
+MATH10101,Metric Spaces,gateway,20,3,2,joint_cs,8
+MATH10101,Metric Spaces,gateway,20,3,2,joint_econ,25
+MATH10101,Metric Spaces,gateway,20,3,2,single,200
+MATH10101,Metric Spaces,gateway,20,4,2,ALL,141
+MATH10101,Metric Spaces,gateway,20,4,2,joint_bus,5
+MATH10101,Metric Spaces,gateway,20,4,2,joint_cs,22
+MATH10101,Metric Spaces,gateway,20,4,2,joint_econ,13
+MATH10101,Metric Spaces,gateway,20,4,2,joint_phil,52
+MATH10101,Metric Spaces,gateway,20,4,2,joint_phys,49
+MATH10028,Theory of Statistical Inference,optional,20,3,1,ALL,45
+MATH10028,Theory of Statistical Inference,optional,20,3,1,joint_bus,16
+MATH10028,Theory of Statistical Inference,optional,20,3,1,joint_econ,13
+MATH10028,Theory of Statistical Inference,optional,20,3,1,joint_phil,16
+MATH10028,Theory of Statistical Inference,optional,20,4,1,ALL,224
+MATH10028,Theory of Statistical Inference,optional,20,4,1,joint_bus,16
+MATH10028,Theory of Statistical Inference,optional,20,4,1,joint_cs,8
+MATH10028,Theory of Statistical Inference,optional,20,4,1,single,200
+MATH10065,Fundamentals of Operational Research,optional,20,3,1,ALL,225
+MATH10065,Fundamentals of Operational Research,optional,20,3,1,joint_econ,8
+MATH10065,Fundamentals of Operational Research,optional,20,3,1,joint_phil,9
+MATH10065,Fundamentals of Operational Research,optional,20,3,1,joint_phys,8
+MATH10065,Fundamentals of Operational Research,optional,20,3,1,single,200
+MATH10065,Fundamentals of Operational Research,optional,20,4,1,ALL,52
+MATH10065,Fundamentals of Operational Research,optional,20,4,1,joint_cs,17
+MATH10065,Fundamentals of Operational Research,optional,20,4,1,joint_econ,6
+MATH10065,Fundamentals of Operational Research,optional,20,4,1,joint_phil,10
+MATH10065,Fundamentals of Operational Research,optional,20,4,1,joint_phys,19
+MATH10051,Fourier Analysis,optional,20,3,2,ALL,52
+MATH10051,Fourier Analysis,optional,20,3,2,joint_bus,19
+MATH10051,Fourier Analysis,optional,20,3,2,joint_econ,5
+MATH10051,Fourier Analysis,optional,20,3,2,joint_phil,19
+MATH10051,Fourier Analysis,optional,20,3,2,joint_phys,9
+MATH10051,Fourier Analysis,optional,20,4,2,ALL,213
+MATH10051,Fourier Analysis,optional,20,4,2,joint_phil,13
+MATH10051,Fourier Analysis,optional,20,4,2,single,200
+MATH10080,Galois Theory,optional,20,3,2,ALL,241
+MATH10080,Galois Theory,optional,20,3,2,joint_bus,11
+MATH10080,Galois Theory,optional,20,3,2,joint_cs,16
+MATH10080,Galois Theory,optional,20,3,2,joint_econ,3
+MATH10080,Galois Theory,optional,20,3,2,joint_phil,11
+MATH10080,Galois Theory,optional,20,3,2,single,200
+MATH10080,Galois Theory,optional,20,4,2,ALL,99
+MATH10080,Galois Theory,optional,20,4,2,joint_bus,35
+MATH10080,Galois Theory,optional,20,4,2,joint_cs,8
+MATH10080,Galois Theory,optional,20,4,2,joint_econ,51
+MATH10080,Galois Theory,optional,20,4,2,joint_phys,5
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,20,3,1,ALL,62
+PHYS_A_S1Y3,Quantum Mechanics SEM1 Y3,outside,20,3,1,joint_phys,62
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,20,3,1,ALL,40
+PHYS_B_S1Y3,Thermal Physics SEM1 Y3,outside,20,3,1,joint_phys,40
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,20,3,2,ALL,51
+PHYS_C_S2Y3,Electromagnetism SEM2 Y3,outside,20,3,2,joint_phys,51
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,20,3,2,ALL,56
+PHYS_D_S2Y3,Optics and Waves SEM2 Y3,outside,20,3,2,joint_phys,56
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,20,4,1,ALL,62
+PHYS_A_S1Y4,Quantum Mechanics SEM1 Y4,outside,20,4,1,joint_phys,62
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,20,4,1,ALL,38
+PHYS_B_S1Y4,Thermal Physics SEM1 Y4,outside,20,4,1,joint_phys,38
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,20,4,2,ALL,54
+PHYS_C_S2Y4,Electromagnetism SEM2 Y4,outside,20,4,2,joint_phys,54
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,20,4,2,ALL,65
+PHYS_D_S2Y4,Optics and Waves SEM2 Y4,outside,20,4,2,joint_phys,65
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,20,3,1,ALL,38
+ECON_A_S1Y3,Topics in Microeconomics SEM1 Y3,outside,20,3,1,joint_econ,38
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,20,3,1,ALL,57
+ECON_B_S1Y3,Essentials of Econometrics SEM1 Y3,outside,20,3,1,joint_econ,57
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,20,3,2,ALL,54
+ECON_C_S2Y3,Development Economics SEM2 Y3,outside,20,3,2,joint_econ,54
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,20,3,2,ALL,40
+ECON_D_S2Y3,International Trade SEM2 Y3,outside,20,3,2,joint_econ,40
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,20,4,1,ALL,51
+ECON_A_S1Y4,Topics in Microeconomics SEM1 Y4,outside,20,4,1,joint_econ,51
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,20,4,1,ALL,57
+ECON_B_S1Y4,Essentials of Econometrics SEM1 Y4,outside,20,4,1,joint_econ,57
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,20,4,2,ALL,46
+ECON_C_S2Y4,Development Economics SEM2 Y4,outside,20,4,2,joint_econ,46
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,20,4,2,ALL,57
+ECON_D_S2Y4,International Trade SEM2 Y4,outside,20,4,2,joint_econ,57
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,20,3,1,ALL,50
+BUS_A_S1Y3,Strategic Management SEM1 Y3,outside,20,3,1,joint_bus,50
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,20,3,1,ALL,65
+BUS_B_S1Y3,Marketing Strategy SEM1 Y3,outside,20,3,1,joint_bus,65
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,20,3,2,ALL,44
+BUS_C_S2Y3,Business Finance SEM2 Y3,outside,20,3,2,joint_bus,44
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,20,3,2,ALL,46
+BUS_D_S2Y3,Organisational Behaviour SEM2 Y3,outside,20,3,2,joint_bus,46
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,20,4,1,ALL,62
+BUS_A_S1Y4,Strategic Management SEM1 Y4,outside,20,4,1,joint_bus,62
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,20,4,1,ALL,46
+BUS_B_S1Y4,Marketing Strategy SEM1 Y4,outside,20,4,1,joint_bus,46
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,20,4,2,ALL,60
+BUS_C_S2Y4,Business Finance SEM2 Y4,outside,20,4,2,joint_bus,60
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,20,4,2,ALL,43
+BUS_D_S2Y4,Organisational Behaviour SEM2 Y4,outside,20,4,2,joint_bus,43
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,20,3,1,ALL,65
+CS_A_S1Y3,Machine Learning SEM1 Y3,outside,20,3,1,joint_cs,65
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,20,3,1,ALL,54
+CS_B_S1Y3,Computer Systems SEM1 Y3,outside,20,3,1,joint_cs,54
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,20,3,2,ALL,49
+CS_C_S2Y3,Software Engineering SEM2 Y3,outside,20,3,2,joint_cs,49
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,20,3,2,ALL,57
+CS_D_S2Y3,Database Systems SEM2 Y3,outside,20,3,2,joint_cs,57
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,20,4,1,ALL,38
+CS_A_S1Y4,Machine Learning SEM1 Y4,outside,20,4,1,joint_cs,38
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,20,4,1,ALL,41
+CS_B_S1Y4,Computer Systems SEM1 Y4,outside,20,4,1,joint_cs,41
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,20,4,2,ALL,40
+CS_C_S2Y4,Software Engineering SEM2 Y4,outside,20,4,2,joint_cs,40
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,20,4,2,ALL,65
+CS_D_S2Y4,Database Systems SEM2 Y4,outside,20,4,2,joint_cs,65
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,20,3,1,ALL,35
+PHIL_A_S1Y3,Epistemology SEM1 Y3,outside,20,3,1,joint_phil,35
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,20,3,1,ALL,45
+PHIL_B_S1Y3,Logic and Metaphysics SEM1 Y3,outside,20,3,1,joint_phil,45
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,20,3,2,ALL,38
+PHIL_C_S2Y3,Philosophy of Mind SEM2 Y3,outside,20,3,2,joint_phil,38
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,20,3,2,ALL,46
+PHIL_D_S2Y3,Ethics and Society SEM2 Y3,outside,20,3,2,joint_phil,46
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,20,4,1,ALL,60
+PHIL_A_S1Y4,Epistemology SEM1 Y4,outside,20,4,1,joint_phil,60
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,20,4,1,ALL,45
+PHIL_B_S1Y4,Logic and Metaphysics SEM1 Y4,outside,20,4,1,joint_phil,45
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,20,4,2,ALL,65
+PHIL_C_S2Y4,Philosophy of Mind SEM2 Y4,outside,20,4,2,joint_phil,65
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,20,4,2,ALL,43
+PHIL_D_S2Y4,Ethics and Society SEM2 Y4,outside,20,4,2,joint_phil,43

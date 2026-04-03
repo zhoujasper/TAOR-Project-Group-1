@@ -1,0 +1,12 @@
+- 课和课之间的间隔 4->3.
+- 每日学生最多只能有4门课（包含lecture和workshop）
+- workshop after lecture 为 true.
+- 对于学校来说同一个时间段所有课（包括lecture和workshop）不能超过4门课.
+- 对于compulsory课程的workshop 开始parallel开课（only math）
+- 午休时间 12:00–13:00 禁止排课（`lunch_break_no_class: true`），通过在变量生成阶段过滤掉 period 3，不创建该时段的 open/assign 变量。
+- 新增硬约束 `student_max_consecutive_slots: 2`：学生连续上课不超过2小时，之后必须有至少1小时休息。防止学生连续3+小时上课导致疲劳。
+- 新增软目标 `late_slot_penalty`（weight=2, threshold=period 7 即16:00）：惩罚在16:00–18:00时段排课，鼓励课程集中在白天核心时段。
+- 同一门课的所有(weekly workshop 和fornight workshop)不能在同一个time slot上课. (weekly-wekkly 可以，fornight-fornight 可以，weekly-fornight 不可以)
+- 全都没有任何9:00-10:00的课了（对于MATH）
+- 周五下午没有课了（对于MATH）（先写成constraint）
+- 同一个时间段同一门课的同一种的workshop不超过2门课

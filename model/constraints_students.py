@@ -270,21 +270,21 @@ def add_student_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
 
 
     # ----------------------------------------------------------------------------------------------------------
-    # Student max daily gap — on each physical day, the CONSECUTIVE gap (number of free
-    # periods) between any two adjacent attended periods must be strictly less than
-    # student_max_daily_gap.
+    # Student max daily gap AND student max slots per day.
+    # Both constraints share the same per-period attendance indicator variables.
     #
-    # Formulation: for any pair (p_i, p_j) with distance p_j − p_i > max_gap,
+    # Daily gap: for any pair (p_i, p_j) with distance p_j − p_i > max_gap,
     #   att[p_i] + att[p_j]  ≤  1 + Σ att[p_m]   (for all p_m with p_i < p_m < p_j)
-    # This ensures that if both endpoints are attended, at least one intermediate
-    # period is also attended — inductively guaranteeing every consecutive gap < max_gap.
     #
-    # Example (max_gap=4, 1h slots): classes at P0,P2,P3,P6 → consecutive gaps 1,0,2
-    # → all < 4 ✓.  Old span-based rule would have forbidden P0+P6 (span 6 > 5).
+    # Max slots per day: sum of attend variables per day ≤ max_slots.
     # ----------------------------------------------------------------------------------------------------------
 
     max_gap = inst.rules.student_max_daily_gap
-    if max_gap < 999:
+    max_slots = inst.rules.student_max_slots_per_day
+    max_consec = inst.rules.student_max_consecutive_slots
+    need_attend = (max_gap < 999) or (max_slots < 999) or (max_consec < 999)
+
+    if need_attend:
 
         all_days_set = {k.day for k in inst.timeslot_keys_list}
         all_periods_set = {k.period for k in inst.timeslot_keys_list}
@@ -319,13 +319,19 @@ def add_student_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
 
                     for d in all_days_set:
                         for pw_label, wps in physical_weeks:
+                            # attend: all courses (used for max_slots and max_consec)
                             attend = {}
+                            # attend_noout: only non-outside courses (used for max_gap,
+                            # because outside courses have fixed timeslots we cannot move)
+                            attend_noout = {}
 
                             for p in all_periods_set:
                                 links = []
+                                links_noout = []
 
                                 for cid, take_var in courses_in_sem.items():
                                     c_obj = course_by_id[cid]
+                                    is_outside = (c_obj.kind == CourseKind.OUTSIDE)
                                     for comp in c_obj.components:
                                         for wp in wps:
                                             if not is_sectioned(comp):
@@ -333,11 +339,15 @@ def add_student_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
                                                     (cid, comp.id, y, sem, wp, d, p))
                                                 if ov is not None:
                                                     links.append(('lec', take_var, ov))
+                                                    if not is_outside:
+                                                        links_noout.append(('lec', take_var, ov))
                                             else:
                                                 av = assign_detail.get(
                                                     (s.id, cid, comp.id, y, sem, wp, d, p))
                                                 if av is not None:
                                                     links.append(('ws', av))
+                                                    if not is_outside:
+                                                        links_noout.append(('ws', av))
 
                                 if not links:
                                     continue
@@ -345,33 +355,82 @@ def add_student_constraints(model: cp_model.CpModel, inst: Instance, vs: VarSets
                                 att = model.new_bool_var(
                                     f"att[{s.id},Y{y},S{sem},{pw_label},D{d},P{p}]")
 
+                                active_indicators = []
+
                                 for lk in links:
                                     if lk[0] == 'lec':
                                         _, tv, ov = lk
-                                        # att fires when take = 1 AND open = 1
-                                        model.add(att >= tv + ov - 1)
+                                        # lecture attendance indicator for (take AND open)
+                                        lec_on = model.new_bool_var(
+                                            f"att_lec_on[{s.id},Y{y},S{sem},{pw_label},D{d},P{p},i{len(active_indicators)}]")
+                                        model.add(lec_on <= tv)
+                                        model.add(lec_on <= ov)
+                                        model.add(lec_on >= tv + ov - 1)
+                                        active_indicators.append(lec_on)
+                                        model.add(att >= lec_on)
                                     else:  # workshop
                                         _, av = lk
                                         # att fires when assign = 1
+                                        active_indicators.append(av)
                                         model.add(att >= av)
+
+                                # Prevent artificial attend=1 when no class is active at this period.
+                                model.add(att <= sum(active_indicators))
 
                                 attend[p] = att
 
-                            # Consecutive-gap elimination: for any pair with distance > max_gap,
-                            # if both are attended, at least one period between them must also be.
-                            periods = sorted(attend.keys())
-                            for i in range(len(periods)):
-                                for j in range(i + 1, len(periods)):
-                                    if periods[j] - periods[i] > max_gap:
-                                        between = [attend[periods[m]]
-                                                   for m in range(i + 1, j)]
-                                        if between:
-                                            model.add(
-                                                attend[periods[i]] +
-                                                attend[periods[j]]
-                                                <= 1 + sum(between))
+                                # Build attend_noout (non-outside courses only, for gap constraint)
+                                if links_noout:
+                                    att_no = model.new_bool_var(
+                                        f"att_no[{s.id},Y{y},S{sem},{pw_label},D{d},P{p}]")
+                                    no_indicators = []
+                                    for lk in links_noout:
+                                        if lk[0] == 'lec':
+                                            _, tv, ov = lk
+                                            lec_on_no = model.new_bool_var(
+                                                f"att_lno[{s.id},Y{y},S{sem},{pw_label},D{d},P{p},i{len(no_indicators)}]")
+                                            model.add(lec_on_no <= tv)
+                                            model.add(lec_on_no <= ov)
+                                            model.add(lec_on_no >= tv + ov - 1)
+                                            no_indicators.append(lec_on_no)
+                                            model.add(att_no >= lec_on_no)
                                         else:
-                                            # No possible intermediate activity → hard forbid
-                                            model.add(
-                                                attend[periods[i]] +
-                                                attend[periods[j]] <= 1)
+                                            _, av = lk
+                                            no_indicators.append(av)
+                                            model.add(att_no >= av)
+                                    model.add(att_no <= sum(no_indicators))
+                                    attend_noout[p] = att_no
+
+                            # Consecutive-gap elimination (only for non-outside courses)
+                            if max_gap < 999:
+                                periods = sorted(attend_noout.keys())
+                                for i in range(len(periods)):
+                                    for j in range(i + 1, len(periods)):
+                                        if periods[j] - periods[i] > max_gap:
+                                            between = [attend_noout[periods[m]]
+                                                       for m in range(i + 1, j)]
+                                            if between:
+                                                model.add(
+                                                    attend_noout[periods[i]] +
+                                                    attend_noout[periods[j]]
+                                                    <= 1 + sum(between))
+                                            else:
+                                                model.add(
+                                                    attend_noout[periods[i]] +
+                                                    attend_noout[periods[j]] <= 1)
+
+                            # Max slots per day (all courses)
+                            if max_slots < 999 and attend:
+                                model.add(sum(attend.values()) <= max_slots)
+
+                            # Max consecutive slots: no window of (K+1)
+                            # consecutively-numbered periods can all be attended.
+                            if max_consec < 999 and len(attend) > max_consec:
+                                periods = sorted(attend.keys())
+                                window = max_consec + 1
+                                for i in range(len(periods) - window + 1):
+                                    # Only constrain truly consecutive period indices
+                                    run = periods[i:i + window]
+                                    if run[-1] - run[0] == window - 1:
+                                        model.add(
+                                            sum(attend[p] for p in run) <= max_consec)

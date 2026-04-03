@@ -1,0 +1,5 @@
+- 课和课之间的间隔 4->3.
+- 每日学生最多只能有4门课（包含lecture和workshop）
+- workshop after lecture 为true.
+- 对于学校来说同一个时间段所有课（包括lecture和workshop）不能超过4门课.
+- 对于compulsory课程的workshop 开始parallel开课（only math）

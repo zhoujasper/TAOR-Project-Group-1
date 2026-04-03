@@ -144,3 +144,22 @@ def to_minutes(s):
     hh, mm = s.strip().split(":")
 
     return 60 * int(hh) + int(mm)
+
+
+def parse_timeslots(s):
+    """
+    Parse 'day:period;day:period;...' into a set of (day, period) tuples,
+    or return None if the string is empty.
+    """
+    if not s or not str(s).strip():
+        return None
+    result = set()
+    for tok in str(s).split(";"):
+        tok = tok.strip()
+        if not tok:
+            continue
+        parts = tok.split(":")
+        if len(parts) != 2:
+            raise ValueError(f"Invalid timeslot token '{tok}', expected 'day:period'")
+        result.add((int(parts[0]), int(parts[1])))
+    return result if result else None

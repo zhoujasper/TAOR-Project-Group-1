@@ -53,9 +53,9 @@ def build_variables(model: cp_model.CpModel, inst: Instance):
         s_sems_set = set(inst.semesters_for_student(s))
         for c in inst.courses:
             # Skip courses the student can never take based on programme / rule restrictions (reducing search space).
-            if c.kind == CourseKind.GATEWAY and rule.allowed_gateway_ids is not None and c.id not in rule.allowed_gateway_ids:
+            if c.kind == CourseKind.MATH_GW and rule.allowed_gateway_ids is not None and c.id not in rule.allowed_gateway_ids:
                 continue
-            if c.kind == CourseKind.OPTIONAL and rule.allowed_optional_ids is not None and c.id not in rule.allowed_optional_ids:
+            if c.kind == CourseKind.MATH_OP and rule.allowed_optional_ids is not None and c.id not in rule.allowed_optional_ids:
                 continue
             if c.kind == CourseKind.OUTSIDE:
                 if s.programme == ProgrammeKind.SINGLE:

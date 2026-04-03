@@ -22,6 +22,8 @@ def main():
     parser.add_argument("--no-debug", action="store_false", dest="debug")
     parser.add_argument("--no-validate", action="store_false", dest="validate")
     parser.add_argument("--no-soft", action="store_false", dest="soft")
+    parser.add_argument("--time-limit", type=int, default=None,
+                        help="Solver time limit in minutes (overrides config)")
     args = parser.parse_args()
 
     if not args.instance:
@@ -96,6 +98,8 @@ def main():
     try:
         solver = cp_model.CpSolver()
         apply_default_solver_config(solver, debug=args.debug)
+        if args.time_limit is not None:
+            solver.parameters.max_time_in_seconds = args.time_limit * 60
         callback = SolutionPrinter(stop_event_solve)
         status = log_helper.solve_and_log(model, solver, callback)
         elapsed = time.time() - t2

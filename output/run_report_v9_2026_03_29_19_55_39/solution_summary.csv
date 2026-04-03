@@ -1,0 +1,15 @@
+metric,value
+objective_value,1438.0
+best_bound,206.0
+total_students,475
+student_types,82
+total_take_vars_weighted,5700
+active_courses,64
+conflicts_total,211
+conflicts_lec_lec,0
+conflicts_lec_ws,192
+conflicts_ws_ws,19
+students_with_conflict,137
+pct_with_conflict,28.8%
+mean_conflicts_per_stu,0.44
+median_conflicts_per_stu,0.0
